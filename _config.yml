@@ -1,10 +1,3 @@
-remote_theme: pages-themes/minimal@v0.2.0
-plugins:
-  - jekyll-remote-theme
-
 title: Geon-Tae Park
 description: Physics Researcher at Kyung Hee University
-author: Geon-Tae Park
-email: iharry01@khu.ac.kr
-
-show_downloads: false
+theme: minima

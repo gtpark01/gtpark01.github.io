@@ -1,15 +1,10 @@
-remote_theme: jekyll/minima
+remote_theme: pages-themes/minimal@v0.2.0
+plugins:
+  - jekyll-remote-theme
+
 title: Geon-Tae Park
+description: Physics Researcher at Kyung Hee University
 author: Geon-Tae Park
 email: iharry01@khu.ac.kr
-description: Physics Researcher at Kyung Hee University
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
 
-# Social links (optional)
-github_username: gtpark01
-
-# Theme-specific settings
-minima:
-  skin: dark
+show_downloads: false

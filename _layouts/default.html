@@ -23,8 +23,22 @@
         </nav>
     </header>
 
-    <div class="banner">
-        <img src="{{ '/assets/images/banner.jpg' | relative_url }}" alt="Physics Research Banner" class="banner-image">
+    <!-- Slideshow Container -->
+    <div class="slideshow-container">
+        <div class="slides fade">
+            <img src="{{ '/assets/images/research-slides/research1.jpg' | relative_url }}" alt="Research Highlight 1" class="slide-image">
+        </div>
+        <div class="slides fade">
+            <img src="{{ '/assets/images/research-slides/research2.jpg' | relative_url }}" alt="Research Highlight 2" class="slide-image">
+        </div>
+        <div class="slides fade">
+            <img src="{{ '/assets/images/research-slides/research3.jpg' | relative_url }}" alt="Research Highlight 3" class="slide-image">
+        </div>
+        <div class="slide-dots">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
     </div>
 
     <div class="container">
@@ -59,5 +73,29 @@
     <footer>
         <p>&copy; 2024 Geon-Tae Park | All Rights Reserved</p>
     </footer>
+
+    <!-- Slideshow Script -->
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            const slides = document.getElementsByClassName("slides");
+            const dots = document.getElementsByClassName("dot");
+            
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+            
+            setTimeout(showSlides, 5000); // Change slide every 5 seconds
+        }
+    </script>
 </body>
 </html>

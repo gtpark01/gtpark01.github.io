@@ -2,3 +2,6 @@ title: Geon-Tae Park
 description: Physics Researcher | MS Candidate
 baseurl: ""
 url: ""
+
+# Build settings
+markdown: kramdown

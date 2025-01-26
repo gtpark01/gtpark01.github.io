@@ -71,16 +71,15 @@ body {
 /* Slideshow Styles */
 .slideshow-container {
     position: relative;
-    height: 800px; /* Increased height to show full article headers */
+    height: 800px;
     width: 100%;
-    max-width: 1400px; /* Added max-width for larger screens */
+    max-width: 1400px;
     margin: 0 auto;
     background: white;
     padding: 20px;
 }
 
 .slides {
-    display: none;
     height: 100%;
     width: 100%;
     display: flex;
@@ -93,7 +92,7 @@ body {
     height: auto;
     max-width: 100%;
     max-height: 100%;
-    object-fit: contain; /* Changed from cover to contain */
+    object-fit: contain;
     object-position: center;
 }
 
@@ -214,13 +213,12 @@ footer {
     margin-top: 4rem;
 }
 
-/* Update responsive design for slideshow */
+/* Responsive Design */
 @media (max-width: 768px) {
     .slideshow-container {
         height: 500px;
         padding: 10px;
     }
-}
     
     .welcome-section {
         margin: 1rem;

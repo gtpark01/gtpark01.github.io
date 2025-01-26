@@ -1,1 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.title }} - Physics Researcher</title>
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+</head>
+<body>
+    <header class="header">
+        <h1>GEON-TAE PARK</h1>
+        <nav class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="/" class="active">HOME</a></li>
+                <li><a href="/about">ABOUT ME</a></li>
+                <li><a href="/research">RESEARCH</a></li>
+                <li><a href="/publications">PUBLICATIONS</a></li>
+                <li><a href="/projects">PROJECTS</a></li>
+                <li><a href="/blog">BLOG</a></li>
+                <li><a href="/contact">CONTACT ME</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <div class="banner">
+        <img src="assets/images/banner.jpg" alt="Physics Research Banner" class="banner-image">
+    </div>
+
+    <div class="container">
+        <section class="welcome-section">
+            <h2>WELCOME</h2>
+            <p>Welcome to my research portfolio. I specialize in inverse design, multilayer photonic structures, and machine learning applications in optics. My work focuses on advancing our understanding of complex optical systems through computational methods and innovative design approaches.</p>
+        </section>
+
+        <div class="grid-container">
+            <div class="grid-item">
+                <h3>RESEARCH FOCUS</h3>
+                <p>Specializing in inverse design methodology and machine learning applications for optimizing multilayer photonic structures...</p>
+                <a href="/research" class="read-more">READ MORE</a>
+            </div>
+            <div class="grid-item">
+                <h3>PUBLICATIONS</h3>
+                <p>Contributing to the field through peer-reviewed research papers and conference presentations in physics and optics...</p>
+                <a href="/publications" class="read-more">READ MORE</a>
+            </div>
+            <div class="grid-item">
+                <h3>EDUCATION</h3>
+                <p>Pursuing advanced studies in Physics at Kyung Hee University with a perfect GPA of 4.3/4.3...</p>
+                <a href="/about#education" class="read-more">READ MORE</a>
+            </div>
+        </div>
+
+        <section class="content-section">
+            {{ content }}
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Geon-Tae Park | All Rights Reserved</p>
+    </footer>
+</body>
+</html>

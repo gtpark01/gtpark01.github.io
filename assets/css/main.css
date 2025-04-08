@@ -1,9 +1,6 @@
-/*
- * Minimal Example main.css 
- * for a text-left / image-right hero
- */
-
-/* Reset & Base */
+/* -------------------------------------
+   BASE / RESET
+-------------------------------------- */
 * {
   box-sizing: border-box;
   margin: 0; 
@@ -17,7 +14,9 @@ body {
   line-height: 1.6;
 }
 
-/* NAVBAR (assuming your nav.html uses .header / .nav-container ) */
+/* -------------------------------------
+   NAVBAR (assuming your nav partial)
+-------------------------------------- */
 .header {
   background-color: #111;
   padding: 0.5rem 1rem;
@@ -67,27 +66,33 @@ body {
   color: #fff;
 }
 
-/* HERO FULL-SPLIT */
+/* -------------------------------------
+   HERO FULL-SPLIT (Text left, Image right)
+-------------------------------------- */
 .hero-full-split {
-  display: flex; 
-  flex-wrap: nowrap;
-  min-height: 80vh;
+  display: flex;
   width: 100%;
+  height: 100vh; /* fill full browser viewport height */
+  overflow: hidden;
+  /* If you'd rather not fill the entire viewport, use min-height: 80vh */
 }
 
 /* left column */
 .hero-left-content {
-  flex: 1 1 50%;
+  position: relative;
+  width: 50%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* pins .hero-left-inner to bottom */
+  justify-content: flex-end; /* pins text to bottom */
   padding: 2rem;
+  background-color: #faf5e6; /* same as body or slightly different if you want */
 }
 
 .hero-left-inner {
   margin-bottom: 2rem; /* spacing from bottom */
 }
 
+/* Subheading & Title */
 .hero-subtitle {
   display: inline-block;
   font-size: 0.85rem;
@@ -106,7 +111,7 @@ body {
   line-height: 1.2;
 }
 
-/* name highlight with underline so it doesn't look copied */
+/* Different highlight style for your name */
 .name-highlight {
   color: #d04646;
   text-decoration: underline 4px solid #d04646;
@@ -114,6 +119,7 @@ body {
   font-weight: 700;
 }
 
+/* Brief text below */
 .hero-description {
   font-size: 1.1rem;
   margin-bottom: 1.5rem;
@@ -158,24 +164,27 @@ body {
   background-color: #eee;
 }
 
-/* right column for image */
+/* Right side: fully covered image */
 .hero-right-image {
-  flex: 1 1 50%;
+  width: 50%;
+  position: relative; /* needed for absolutely positioned img */
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #111; /* fallback if no image */
+  background-color: #000; /* fallback color if image fails */
 }
 
+/* Force the img to cover the entire container */
 .hero-right-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
-  display: block;
 }
 
-/* HOME CONTENT BELOW HERO */
+/* -------------------------------------
+   HOME CONTENT BELOW HERO
+-------------------------------------- */
 .home-content {
   max-width: 1000px;
   margin: 2rem auto;
@@ -185,7 +194,9 @@ body {
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 
-/* FOOTER (assuming .footer) */
+/* -------------------------------------
+   FOOTER
+-------------------------------------- */
 footer {
   background-color: #111;
   color: #fff;
@@ -194,7 +205,9 @@ footer {
   margin-top: 2rem;
 }
 
-/* RESPONSIVE */
+/* -------------------------------------
+   RESPONSIVE QUERIES
+-------------------------------------- */
 @media (max-width: 992px) {
   .hero-title {
     font-size: 2.2rem;

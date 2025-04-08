@@ -1,101 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ site.title }} - Physics Researcher</title>
-    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>{{ page.title }} - {{ site.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Link to main CSS -->
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
-        <h1>GEON-TAE PARK</h1>
-        <nav class="nav-container">
-            <ul class="nav-menu">
-                <li><a href="/" class="active">HOME</a></li>
-                <li><a href="/about">ABOUT ME</a></li>
-                <li><a href="/research">RESEARCH</a></li>
-                <li><a href="/publications">PUBLICATIONS</a></li>
-                <li><a href="/projects">PROJECTS</a></li>
-                <li><a href="/blog">BLOG</a></li>
-                <li><a href="/contact">CONTACT ME</a></li>
-            </ul>
-        </nav>
-    </header>
+  {% include nav.html %}
 
-        <!-- Slideshow Container -->
-    <div class="slideshow-container">
-        <div class="slides fade">
-            <img src="{{ '/assets/images/research-slides/research1.jpg' | relative_url }}" alt="Conformal Antireflective Multilayers Paper" class="slide-image">
-        </div>
-        <div class="slides fade">
-            <img src="{{ '/assets/images/research-slides/research2.jpg' | relative_url }}" alt="Binary-optimization-based Multilayers Paper" class="slide-image">
-        </div>
-        <div class="slides fade">
-            <img src="{{ '/assets/images/research-slides/research3.jpg' | relative_url }}" alt="Ultrathin Ge-YF3 Antireflective Coating Paper" class="slide-image">
-        </div>
-        <div class="slide-dots">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
-    </div>
+  <!-- Main Content Area -->
+  <div class="container">
+      <section class="content-section">
+          {{ content }}
+      </section>
+  </div>
 
-    <div class="container">
-        <section class="welcome-section">
-            <h2>WELCOME</h2>
-            <p>Welcome to my research portfolio. I specialize in inverse design, multilayer photonic structures, and machine learning applications in optics. My work focuses on advancing our understanding of complex optical systems through computational methods and innovative design approaches.</p>
-        </section>
-
-        <div class="grid-container">
-            <div class="grid-item">
-                <h3>RESEARCH FOCUS</h3>
-                <p>Specializing in inverse design methodology and machine learning applications for optimizing multilayer photonic structures. Exploring innovative computational approaches to advance optical systems.</p>
-                <a href="/research" class="read-more">READ MORE</a>
-            </div>
-            <div class="grid-item">
-                <h3>PUBLICATIONS</h3>
-                <p>Contributing to the field through peer-reviewed research papers and conference presentations in physics and optics. Focused on advancing the understanding of photonic structures.</p>
-                <a href="/publications" class="read-more">READ MORE</a>
-            </div>
-            <div class="grid-item">
-                <h3>EDUCATION</h3>
-                <p>Pursuing advanced studies in Physics at Kyung Hee University with a perfect GPA of 4.3/4.3. Specialized training in computational physics and optical systems.</p>
-                <a href="/about#education" class="read-more">READ MORE</a>
-            </div>
-        </div>
-
-        <section class="content-section">
-            {{ content }}
-        </section>
-    </div>
-
-    <footer>
-        <p>&copy; 2024 Geon-Tae Park | All Rights Reserved</p>
-    </footer>
-
-    <!-- Slideshow Script -->
-    <script>
-        let slideIndex = 0;
-        showSlides();
-
-        function showSlides() {
-            const slides = document.getElementsByClassName("slides");
-            const dots = document.getElementsByClassName("dot");
-            
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            
-            slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}
-            
-            slides[slideIndex-1].style.display = "block";
-            dots[slideIndex-1].className += " active";
-            
-            setTimeout(showSlides, 5000); // Change slide every 5 seconds
-        }
-    </script>
+  {% include footer.html %}
 </body>
 </html>

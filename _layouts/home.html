@@ -1,1 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ site.title }} - Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Link to main CSS -->
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  {% include nav.html %}
+
+  <!-- Slideshow Container -->
+  <div class="slideshow-container">
+      <div class="slides fade">
+          <img src="{{ '/assets/images/research-slides/research1.jpg' | relative_url }}" alt="Research Slide 1" class="slide-image">
+      </div>
+      <div class="slides fade">
+          <img src="{{ '/assets/images/research-slides/research2.jpg' | relative_url }}" alt="Research Slide 2" class="slide-image">
+      </div>
+      <div class="slides fade">
+          <img src="{{ '/assets/images/research-slides/research3.jpg' | relative_url }}" alt="Research Slide 3" class="slide-image">
+      </div>
+      <div class="slide-dots">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+  </div>
+
+  <div class="container">
+      <!-- Welcome / Intro Section -->
+      <section class="welcome-section">
+          {{ content }}
+      </section>
+
+      <!-- Three-Column Grid (Research, Publications, Education, etc.) -->
+      <div class="grid-container">
+          <div class="grid-item">
+              <h3>RESEARCH FOCUS</h3>
+              <p>Specializing in inverse design methodology and machine learning applications for optimizing multilayer photonic structures. Exploring innovative computational approaches to advance optical systems.</p>
+              <a href="/research" class="read-more">READ MORE</a>
+          </div>
+          <div class="grid-item">
+              <h3>PUBLICATIONS</h3>
+              <p>Contributing to the field through peer-reviewed research papers and conference presentations in physics and optics. Focused on advancing the understanding of photonic structures.</p>
+              <a href="/publications" class="read-more">READ MORE</a>
+          </div>
+          <div class="grid-item">
+              <h3>EDUCATION</h3>
+              <p>Pursuing advanced studies in Physics at Kyung Hee University with a perfect GPA of 4.3/4.3. Specialized training in computational physics and optical systems.</p>
+              <a href="/about#education" class="read-more">READ MORE</a>
+          </div>
+      </div>
+  </div>
+
+  {% include footer.html %}
+
+  <!-- Slideshow Script -->
+  <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("slides");
+      let dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+    }
+
+    // Auto-advance slides every 5 seconds
+    setInterval(function(){
+      slideIndex++;
+      showSlides(slideIndex);
+    }, 5000);
+  </script>
+</body>
+</html>
 

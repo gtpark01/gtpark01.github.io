@@ -1,24 +1,36 @@
-/* -------------------------------------
-   BASE / RESET
--------------------------------------- */
-* {
-  box-sizing: border-box;
-  margin: 0; 
+/* ----------------------------------------------------
+   1) RESET & BASE
+----------------------------------------------------- */
+html, body {
+  height: 100%;
+  margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
 }
 
 body {
   font-family: Helvetica, Arial, sans-serif;
-  background-color: #faf5e6; /* Ivory background */
+  background-color: #faf5e6; /* Ivory-like background */
   color: #2c2c2c;
   line-height: 1.6;
 }
 
-/* -------------------------------------
-   NAVBAR (assuming your nav partial)
--------------------------------------- */
+/* Make images responsive by default */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ----------------------------------------------------
+   2) NAVBAR
+----------------------------------------------------- */
 .header {
-  background-color: #111;
+  background-color: #111;      /* black navbar */
   padding: 0.5rem 1rem;
   position: sticky;
   top: 0;
@@ -62,44 +74,43 @@ body {
 }
 
 .nav-menu li a.active {
-  background-color: #f06262;
+  background-color: #f06262; /* active link color */
   color: #fff;
 }
 
-/* -------------------------------------
-   HERO FULL-SPLIT (Text left, Image right)
--------------------------------------- */
+/* ----------------------------------------------------
+   3) HERO: FULL-SPLIT (Text on left, Image on right)
+----------------------------------------------------- */
 .hero-full-split {
   display: flex;
+  flex-direction: row;
   width: 100%;
-  height: 100vh; /* fill full browser viewport height */
+  height: 100vh; /* fill full browser viewport */
   overflow: hidden;
-  /* If you'd rather not fill the entire viewport, use min-height: 80vh */
 }
 
-/* left column */
 .hero-left-content {
   position: relative;
-  width: 50%;
+  flex: 0 0 50%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* pins text to bottom */
+  justify-content: flex-end; /* pinned to bottom */
   padding: 2rem;
-  background-color: #faf5e6; /* same as body or slightly different if you want */
+  background-color: #faf5e6; /* same as body, or slightly different */
 }
 
 .hero-left-inner {
-  margin-bottom: 2rem; /* spacing from bottom */
+  margin-bottom: 2rem; /* spacing from bottom edge */
 }
 
-/* Subheading & Title */
+/* Subheading + Title */
 .hero-subtitle {
   display: inline-block;
   font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  color: #d04646;
+  color: #d04646; /* accent color for subtitle */
   margin-bottom: 0.5rem;
 }
 
@@ -111,7 +122,7 @@ body {
   line-height: 1.2;
 }
 
-/* Different highlight style for your name */
+/* Different highlight style: underline instead of background block */
 .name-highlight {
   color: #d04646;
   text-decoration: underline 4px solid #d04646;
@@ -119,14 +130,13 @@ body {
   font-weight: 700;
 }
 
-/* Brief text below */
 .hero-description {
   font-size: 1.1rem;
   margin-bottom: 1.5rem;
   color: #333;
 }
 
-/* hero buttons */
+/* Hero Buttons */
 .hero-buttons {
   display: flex;
   gap: 1rem;
@@ -137,54 +147,51 @@ body {
   font-weight: 600;
   padding: 0.8rem 1.4rem;
   border-radius: 4px;
-  text-align: center;
   border: 2px solid #222;
   transition: background-color 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  cursor: pointer;
 }
 
-/* filled button */
+/* Filled button */
 .hero-btn {
   background-color: #222;
   color: #fff;
 }
-
 .hero-btn:hover {
   background-color: #444;
 }
 
-/* outline button */
+/* Outline button */
 .hero-btn-outline {
   background-color: transparent;
   color: #222;
 }
-
 .hero-btn-outline:hover {
   background-color: #eee;
 }
 
-/* Right side: fully covered image */
+/* Right 50%: full-cover image */
 .hero-right-image {
-  width: 50%;
-  position: relative; /* needed for absolutely positioned img */
+  flex: 0 0 50%;
+  position: relative;
   overflow: hidden;
-  background-color: #000; /* fallback color if image fails */
+  background-color: #000; /* fallback if the image is missing */
 }
 
-/* Force the img to cover the entire container */
 .hero-right-image img {
   position: absolute;
-  top: 0;
+  top: 0; 
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* covers entire container */
 }
 
-/* -------------------------------------
-   HOME CONTENT BELOW HERO
--------------------------------------- */
+/* ----------------------------------------------------
+   4) HOME CONTENT BELOW HERO
+----------------------------------------------------- */
 .home-content {
   max-width: 1000px;
   margin: 2rem auto;
@@ -194,9 +201,9 @@ body {
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 
-/* -------------------------------------
-   FOOTER
--------------------------------------- */
+/* ----------------------------------------------------
+   5) FOOTER
+----------------------------------------------------- */
 footer {
   background-color: #111;
   color: #fff;
@@ -205,9 +212,9 @@ footer {
   margin-top: 2rem;
 }
 
-/* -------------------------------------
-   RESPONSIVE QUERIES
--------------------------------------- */
+/* ----------------------------------------------------
+   6) RESPONSIVE QUERIES
+----------------------------------------------------- */
 @media (max-width: 992px) {
   .hero-title {
     font-size: 2.2rem;
@@ -216,14 +223,21 @@ footer {
 
 @media (max-width: 768px) {
   .hero-full-split {
-    flex-direction: column;
-    min-height: auto;
+    flex-direction: column; 
+    height: auto;
   }
   .hero-left-content,
   .hero-right-image {
     width: 100%;
     flex: 1 1 auto;
     padding: 1rem;
+    min-height: 50vh; /* optional if you want some height on mobile */
+  }
+  .hero-right-image img {
+    position: static;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
   }
   .hero-left-inner {
     margin-bottom: 1rem;

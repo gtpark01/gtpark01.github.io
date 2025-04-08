@@ -3,36 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <title>{{ site.title }} - Home</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Link to your main CSS -->
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
-
-  <!-- If you want to guarantee Helvetica usage, you can do this as a fallback: -->
-  <style>
-    body, button, input, select, textarea {
-      font-family: Helvetica, Arial, sans-serif;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 </head>
 <body>
   {% include nav.html %}
 
-  <!-- Hero Section -->
+  <!-- HERO SECTION: text left, image right -->
   <section class="hero-full-split">
-    <!-- Left side: text pinned to bottom-left -->
+    <!-- LEFT COLUMN: pinned bottom text -->
     <div class="hero-left-content">
       <div class="hero-left-inner">
         <span class="hero-subtitle">NATURAL LANGUAGE PROCESSING</span>
         <h1 class="hero-title">
-          I’m <span class="name-highlight">Geon-Tae Park</span>,<br/>
+          I’m <span class="name-highlight">Geon-Tae Park</span>,<br>
           a Physics MS student at Kyung Hee University
         </h1>
         <p class="hero-description">
-          Focused on inverse design, computational photonics,<br/>
+          Focused on inverse design, computational photonics,<br>
           and machine learning applications in optical systems.
         </p>
-
         <div class="hero-buttons">
           <a href="/about" class="hero-btn">ABOUT ME</a>
           <a href="/contact" class="hero-btn-outline">CONTACT</a>
@@ -40,13 +30,13 @@
       </div>
     </div>
 
-    <!-- Right side: large image filling the space -->
+    <!-- RIGHT COLUMN: big hero image -->
     <div class="hero-right-image">
-      <img src="{{ '/assets/images/hero.jpg' | relative_url }}" alt="Hero Image" />
+      <img src="{{ '/assets/images/hero.jpg' | relative_url }}" alt="Hero Image">
     </div>
   </section>
 
-  <!-- Below the hero, you can show your homepage content -->
+  <!-- BELOW-HERO CONTENT -->
   <section class="home-content">
     {{ content }}
   </section>

@@ -3,15 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <title>{{ site.title }} - Home</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
 </head>
 <body>
   {% include nav.html %}
 
-  <!-- HERO SECTION: text left, image right -->
   <section class="hero-full-split">
-    <!-- LEFT COLUMN: pinned bottom text -->
+    <!-- Left 50%: pinned bottom-left text -->
     <div class="hero-left-content">
       <div class="hero-left-inner">
         <span class="hero-subtitle">NATURAL LANGUAGE PROCESSING</span>
@@ -30,13 +29,13 @@
       </div>
     </div>
 
-    <!-- RIGHT COLUMN: big hero image -->
+    <!-- Right 50%: fully covered image -->
     <div class="hero-right-image">
       <img src="{{ '/assets/images/hero.jpg' | relative_url }}" alt="Hero Image">
     </div>
   </section>
 
-  <!-- BELOW-HERO CONTENT -->
+  <!-- Your normal homepage content below -->
   <section class="home-content">
     {{ content }}
   </section>

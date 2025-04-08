@@ -9,8 +9,9 @@
 <body>
   {% include nav.html %}
 
+  <!-- Hero Section: 50% text (left), 50% image (right) -->
   <section class="hero-full-split">
-    <!-- Left 50%: pinned bottom-left text -->
+    <!-- LEFT 50% -->
     <div class="hero-left-content">
       <div class="hero-left-inner">
         <span class="hero-subtitle">NATURAL LANGUAGE PROCESSING</span>
@@ -29,13 +30,14 @@
       </div>
     </div>
 
-    <!-- Right 50%: fully covered image -->
+    <!-- RIGHT 50% -->
     <div class="hero-right-image">
+      <!-- MAKE SURE hero.jpg EXISTS at /assets/images/hero.jpg -->
       <img src="{{ '/assets/images/hero.jpg' | relative_url }}" alt="Hero Image">
     </div>
   </section>
 
-  <!-- Your normal homepage content below -->
+  <!-- Normal homepage content below the hero -->
   <section class="home-content">
     {{ content }}
   </section>

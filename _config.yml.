@@ -1,7 +1,9 @@
 title: Geon-Tae Park
 description: Physics Researcher | MS Candidate
-baseurl: ""
+# These two can be updated if you have a custom domain or want to set a baseurl
 url: ""
+baseurl: ""
 
 # Build settings
 markdown: kramdown
+theme: minima  # or remove this if you don't want the minima theme

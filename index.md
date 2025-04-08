@@ -3,12 +3,11 @@ layout: home
 title: Home
 ---
 
-## Welcome to My Research Portfolio
+<!-- This content will appear BELOW the hero image, inside the .hero-more section -->
 
-I am a Master's candidate in Physics at **Kyung Hee University**, specializing in inverse design and machine learning applications in optics.
-My research focuses on developing innovative approaches to optimize multilayer photonic structures through computational methods.
+## Welcome
+This can be an introduction or recent news, etc.
 
-- **Main Focus**: Inverse design, computational physics, photonics
-- **Current Work**: Conformal anti-reflective coatings, binary-optimization-based multilayers
-
-Feel free to explore my website to learn more about my **Research**, **Publications**, and ongoing **Projects**.
+- My recent paper was accepted to ...
+- Upcoming talk on ...
+- etc.

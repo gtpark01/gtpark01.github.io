@@ -1,36 +1,25 @@
-/* --------------------------------
-   1) BASE / RESET
------------------------------------ */
+/*
+ * Minimal Example main.css 
+ * for a text-left / image-right hero
+ */
+
+/* Reset & Base */
 * {
   box-sizing: border-box;
-  margin: 0;
+  margin: 0; 
   padding: 0;
 }
 
-html, body {
-  height: 100%;
-  width: 100%;
-}
-
 body {
-  font-family: Helvetica, Arial, sans-serif; 
-  line-height: 1.6;
-  background-color: #faf5e6; /* Ivory-ish background */
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: #faf5e6; /* Ivory background */
   color: #2c2c2c;
+  line-height: 1.6;
 }
 
-/* Make images responsive by default */
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-/* --------------------------------
-   2) NAVBAR
------------------------------------ */
+/* NAVBAR (assuming your nav.html uses .header / .nav-container ) */
 .header {
-  background-color: #111; /* black navbar */
+  background-color: #111;
   padding: 0.5rem 1rem;
   position: sticky;
   top: 0;
@@ -74,31 +63,29 @@ img {
 }
 
 .nav-menu li a.active {
-  background-color: #f06262; /* example 'active' color */
+  background-color: #f06262;
   color: #fff;
 }
 
-/* --------------------------------
-   3) HERO FULL-SPLIT
------------------------------------ */
+/* HERO FULL-SPLIT */
 .hero-full-split {
-  display: flex;
+  display: flex; 
   flex-wrap: nowrap;
-  min-height: 80vh; /* or 100vh if you want it to fill entire viewport */
+  min-height: 80vh;
   width: 100%;
 }
 
-/* Left side: pinned bottom-left text */
+/* left column */
 .hero-left-content {
   flex: 1 1 50%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* push content toward bottom */
+  justify-content: flex-end; /* pins .hero-left-inner to bottom */
   padding: 2rem;
 }
 
 .hero-left-inner {
-  margin-bottom: 2rem; /* space between text block and bottom */
+  margin-bottom: 2rem; /* spacing from bottom */
 }
 
 .hero-subtitle {
@@ -107,22 +94,21 @@ img {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  color: #d04646; /* accent color for subtitle */
+  color: #d04646;
   margin-bottom: 0.5rem;
 }
 
 .hero-title {
-  font-size: 2.8rem; /* large text */
+  font-size: 2.8rem;
   font-weight: 700;
   margin-bottom: 1rem;
   color: #222;
   line-height: 1.2;
 }
 
-/* Different highlight for your name:
-   an underline with color instead of a block highlight */
+/* name highlight with underline so it doesn't look copied */
 .name-highlight {
-  color: #d04646; 
+  color: #d04646;
   text-decoration: underline 4px solid #d04646;
   text-underline-offset: 6px;
   font-weight: 700;
@@ -134,7 +120,7 @@ img {
   color: #333;
 }
 
-/* Hero Buttons */
+/* hero buttons */
 .hero-buttons {
   display: flex;
   gap: 1rem;
@@ -152,7 +138,7 @@ img {
   letter-spacing: 0.5px;
 }
 
-/* Filled button */
+/* filled button */
 .hero-btn {
   background-color: #222;
   color: #fff;
@@ -162,7 +148,7 @@ img {
   background-color: #444;
 }
 
-/* Outline button */
+/* outline button */
 .hero-btn-outline {
   background-color: transparent;
   color: #222;
@@ -172,7 +158,7 @@ img {
   background-color: #eee;
 }
 
-/* Right side: full image coverage */
+/* right column for image */
 .hero-right-image {
   flex: 1 1 50%;
   overflow: hidden;
@@ -185,13 +171,11 @@ img {
 .hero-right-image img {
   width: 100%;
   height: auto;
-  object-fit: cover; /* fill container while maintaining aspect ratio */
+  object-fit: cover;
   display: block;
 }
 
-/* --------------------------------
-   4) HOME CONTENT BELOW HERO
------------------------------------ */
+/* HOME CONTENT BELOW HERO */
 .home-content {
   max-width: 1000px;
   margin: 2rem auto;
@@ -201,9 +185,7 @@ img {
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 
-/* --------------------------------
-   5) FOOTER
------------------------------------ */
+/* FOOTER (assuming .footer) */
 footer {
   background-color: #111;
   color: #fff;
@@ -212,9 +194,7 @@ footer {
   margin-top: 2rem;
 }
 
-/* --------------------------------
-   6) RESPONSIVE MEDIA QUERIES
------------------------------------ */
+/* RESPONSIVE */
 @media (max-width: 992px) {
   .hero-title {
     font-size: 2.2rem;
@@ -223,7 +203,7 @@ footer {
 
 @media (max-width: 768px) {
   .hero-full-split {
-    flex-direction: column; 
+    flex-direction: column;
     min-height: auto;
   }
   .hero-left-content,

@@ -1,10 +1,10 @@
-/* ----------------------------------------------------
-   1) RESET & BASE
------------------------------------------------------ */
+/* -------------------------------------
+   1) BASE / RESET
+-------------------------------------- */
 html, body {
-  height: 100%;
   margin: 0;
   padding: 0;
+  height: 100%;
   box-sizing: border-box;
 }
 
@@ -26,18 +26,24 @@ img {
   height: auto;
 }
 
-/* ----------------------------------------------------
+/* -------------------------------------
    2) NAVBAR
------------------------------------------------------ */
+-------------------------------------- */
 .header {
-  background-color: #111;      /* black navbar */
-  padding: 0.5rem 1rem;
+  background-color: #111;
+  /* approximate navbar height: 60px. If yours is bigger or smaller, adjust it. */
+  height: 60px;
   position: sticky;
   top: 0;
   z-index: 999;
+  display: flex;
+  align-items: center; 
+  /* align-items ensures nav items are vertically centered */
+  padding: 0 1rem;
 }
 
 .nav-container {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -56,6 +62,7 @@ img {
   list-style: none;
   display: flex;
   gap: 1.5rem;
+  margin: 0;
 }
 
 .nav-menu li a {
@@ -74,64 +81,67 @@ img {
 }
 
 .nav-menu li a.active {
-  background-color: #f06262; /* active link color */
+  background-color: #f06262; /* example color for 'active' */
   color: #fff;
 }
 
-/* ----------------------------------------------------
-   3) HERO: FULL-SPLIT (Text on left, Image on right)
------------------------------------------------------ */
+/* -------------------------------------
+   3) HERO: side-by-side with nav height subtracted
+-------------------------------------- */
 .hero-full-split {
   display: flex;
-  flex-direction: row;
   width: 100%;
-  height: 100vh; /* fill full browser viewport */
+  /* Subtract the navbar height (~60px) from 100vh 
+     so the hero fits entirely below the navbar. */
+  height: calc(100vh - 60px);
   overflow: hidden;
 }
 
+/* LEFT: pinned bottom text */
 .hero-left-content {
   position: relative;
   flex: 0 0 50%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* pinned to bottom */
+  justify-content: flex-end; 
   padding: 2rem;
-  background-color: #faf5e6; /* same as body, or slightly different */
+  background-color: #faf5e6;
 }
 
 .hero-left-inner {
-  margin-bottom: 2rem; /* spacing from bottom edge */
+  margin-bottom: 2rem; 
 }
 
-/* Subheading + Title */
+/* Subheading & Title (smaller than before) */
 .hero-subtitle {
   display: inline-block;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  color: #d04646; /* accent color for subtitle */
+  color: #d04646;
   margin-bottom: 0.5rem;
 }
 
 .hero-title {
-  font-size: 2.8rem;
+  font-size: 2.2rem; /* reduced from 2.8rem */
   font-weight: 700;
   margin-bottom: 1rem;
   color: #222;
   line-height: 1.2;
 }
 
-/* Different highlight style: underline instead of background block */
+/* Name highlight: underline style */
 .name-highlight {
   color: #d04646;
-  text-decoration: underline 4px solid #d04646;
-  text-underline-offset: 6px;
+  text-decoration: underline 3px solid #d04646; 
+  text-underline-offset: 5px;
   font-weight: 700;
 }
 
+/* Description smaller as well */
 .hero-description {
-  font-size: 1.1rem;
+  font-size: 1rem; /* slightly smaller */
   margin-bottom: 1.5rem;
   color: #333;
 }
@@ -145,8 +155,9 @@ img {
 .hero-btn, .hero-btn-outline {
   display: inline-block;
   font-weight: 600;
-  padding: 0.8rem 1.4rem;
+  padding: 0.7rem 1.2rem; /* slightly smaller */
   border-radius: 4px;
+  text-align: center;
   border: 2px solid #222;
   transition: background-color 0.3s ease;
   text-transform: uppercase;
@@ -172,26 +183,26 @@ img {
   background-color: #eee;
 }
 
-/* Right 50%: full-cover image */
+/* RIGHT: cover image */
 .hero-right-image {
   flex: 0 0 50%;
   position: relative;
   overflow: hidden;
-  background-color: #000; /* fallback if the image is missing */
+  background-color: #000;
 }
 
 .hero-right-image img {
   position: absolute;
-  top: 0; 
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* covers entire container */
+  object-fit: cover;
 }
 
-/* ----------------------------------------------------
-   4) HOME CONTENT BELOW HERO
------------------------------------------------------ */
+/* -------------------------------------
+   4) BELOW-HERO CONTENT
+-------------------------------------- */
 .home-content {
   max-width: 1000px;
   margin: 2rem auto;
@@ -201,9 +212,9 @@ img {
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 
-/* ----------------------------------------------------
+/* -------------------------------------
    5) FOOTER
------------------------------------------------------ */
+-------------------------------------- */
 footer {
   background-color: #111;
   color: #fff;
@@ -212,26 +223,27 @@ footer {
   margin-top: 2rem;
 }
 
-/* ----------------------------------------------------
+/* -------------------------------------
    6) RESPONSIVE QUERIES
------------------------------------------------------ */
+-------------------------------------- */
 @media (max-width: 992px) {
   .hero-title {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
   }
 }
 
 @media (max-width: 768px) {
+  /* Stack hero vertically */
   .hero-full-split {
-    flex-direction: column; 
-    height: auto;
+    flex-direction: column;
+    height: auto; /* let content fit on mobile */
   }
   .hero-left-content,
   .hero-right-image {
     width: 100%;
     flex: 1 1 auto;
     padding: 1rem;
-    min-height: 50vh; /* optional if you want some height on mobile */
+    min-height: 50vh; /* optional if you want at least some height on mobile */
   }
   .hero-right-image img {
     position: static;
@@ -239,10 +251,7 @@ footer {
     height: auto;
     object-fit: cover;
   }
-  .hero-left-inner {
-    margin-bottom: 1rem;
-  }
   .hero-title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 }

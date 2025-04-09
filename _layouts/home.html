@@ -23,6 +23,27 @@
       <p class="hero-keywords">
        <span id="keyword-rotator"></span>
       </p>
+      <script>
+        const keywords = [
+          "Inverse Design",
+          "Machine Learning-based Optimization",
+          "Light-Manipulating Structures"
+        ];
+        let currentIndex = 0;
+        const rotator = document.getElementById("keyword-rotator");
+        rotator.textContent = keywords[currentIndex];
+
+        function cycleKeywords() {
+          setTimeout(() => rotator.classList.add("hidden"), 2000);
+          setTimeout(() => {
+            currentIndex = (currentIndex + 1) % keywords.length;
+            rotator.textContent = keywords[currentIndex];
+            rotator.classList.remove("hidden");
+          }, 3000);
+        }
+
+        setInterval(cycleKeywords, 4000);
+      </script>
       
       <!-- (Optional) Hero Buttons: Keep if you still want them -->
       <div class="hero-buttons">

@@ -11,35 +11,30 @@
 
   <!-- Hero Section: 50% text (left), 50% image (right) -->
   <section class="hero-full-split">
-    <!-- Left Column -->
-    <div class="hero-left-content">
-      <div class="hero-left-inner">
-        <span class="hero-subtitle">NATURAL LANGUAGE PROCESSING</span>
-        <h1 class="hero-title">
-          I’m <span class="name-highlight">Geon-Tae Park</span>,<br>
-          a Physics MS student at Kyung Hee University
-        </h1>
-        <p class="hero-description">
-          Focused on inverse design, computational photonics,<br>
-          and machine learning applications in optical systems.
-        </p>
-        <div class="hero-buttons">
-          <a href="/about" class="hero-btn">ABOUT ME</a>
-          <a href="/contact" class="hero-btn-outline">CONTACT</a>
-        </div>
+  <!-- LEFT COLUMN -->
+  <div class="hero-left-content">
+    <div class="hero-left-inner">
+      <h1 class="hero-title">I’m Geon-Tae Park, a Physics MS student.</h1>
+
+      <!-- (Optional) Hero Buttons: Keep if you still want them -->
+      <div class="hero-buttons">
+        <a href="/about" class="hero-btn">ABOUT ME</a>
+        <a href="/contact" class="hero-btn-outline">CONTACT</a>
       </div>
     </div>
+  </div>
 
-    <!-- Right Column (Hero Image) -->
-    <div class="hero-right-image">
-      <img src="{{ '/assets/images/hero.jpg' | relative_url }}" alt="Hero Image">
-    </div>
-  </section>
+  <!-- RIGHT COLUMN: Hero Image -->
+  <div class="hero-right-image">
+    <img src="{{ '/assets/images/hero.jpg' | relative_url }}" alt="Hero Image">
+  </div>
+</section>
 
-  <!-- Below-Hero Content -->
-  <section class="home-content">
-    {{ content }}
-  </section>
+<!-- Below Hero Content (unchanged) -->
+<section class="home-content">
+  {{ content }}
+</section>
+
 
   {% include footer.html %}
 </body>

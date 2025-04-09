@@ -140,6 +140,24 @@ img {
   color: #e74c3c; /* bright red highlight for your name */
 }
 
+.hero-keywords {
+  font-size: 1.2rem;
+  color: #444;
+  /* You can style this however you like, e.g., uppercase, letter-spacing, etc. */
+}
+
+/* The rotating text itself */
+#keyword-rotator {
+  display: inline-block;
+  opacity: 1;                 /* start fully visible */
+  transition: opacity 1s ease-in-out;  /* fade transition over 1s */
+}
+
+.hidden {
+  opacity: 0; /* when this class is added, it will fade out */
+}
+
+
 /* Name highlight: underline style */
 .name-highlight {
   color: #d04646;

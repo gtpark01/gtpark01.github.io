@@ -129,8 +129,8 @@ img {
 }
 
 .hero-title {
-  font-size: 7rem; /* font size */
-  font-weight: 700; /* how bold or thick the font is */
+  font-size: 5rem; /* font size */
+  font-weight: 600; /* how bold or thick the font is */
   margin-bottom: 1rem;
   color: #222;
   line-height: 1.2;

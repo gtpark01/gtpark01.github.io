@@ -129,8 +129,8 @@ img {
 }
 
 .hero-title {
-  font-size: 4rem; /* font size */
-  font-weight: 600; /* how bold or thick the font is */
+  font-size: clamp(2rem, 5vw, 6rem);
+  font-weight: 600;
   margin-bottom: 1rem;
   color: #222;
   line-height: 1.2;
@@ -255,9 +255,7 @@ footer {
    6) RESPONSIVE QUERIES
 -------------------------------------- */
 @media (max-width: 992px) {
-  .hero-title {
-    font-size: 1.8rem;
-  }
+  /* (Removed hero-title font-size override) */
 }
 
 @media (max-width: 768px) {
@@ -279,7 +277,6 @@ footer {
     height: auto;
     object-fit: cover;
   }
-  .hero-title {
-    font-size: 1.6rem;
-  }
+
+  /* (Removed hero-title font-size override) */
 }

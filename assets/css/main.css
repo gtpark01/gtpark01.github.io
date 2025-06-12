@@ -280,3 +280,54 @@ footer {
 
   /* (Removed hero-title font-size override) */
 }
+
+/* ── Research page ───────────────────────────────────────────────────────── */
+.research-section {
+  max-width: 1200px;
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.research-item {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* flip every even item */
+.research-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.research-image,
+.research-description {
+  flex: 1;
+}
+
+.research-image img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.research-description h2 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.research-description p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 768px) {
+  .research-item {
+    flex-direction: column !important;
+  }
+  .research-description {
+    text-align: center;
+  }
+}

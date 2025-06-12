@@ -4,7 +4,7 @@
       <a href="/" class="site-title">{{ site.title | upcase }}</a>
     </div>
     <ul class="nav-menu">
-      <li><a href="/" {% if page.url == "/" %}class="active"{% endif %}>HOME</a></li>
+      <!-- <li><a href="/" {% if page.url == "/" %}class="active"{% endif %}>HOME</a></li> -->
       <li><a href="/about" {% if page.url contains "about" %}class="active"{% endif %}>ABOUT</a></li>
       <li><a href="/research" {% if page.url contains "research" %}class="active"{% endif %}>RESEARCH</a></li>
       <li><a href="/publications" {% if page.url contains "publications" %}class="active"{% endif %}>PUBLICATIONS</a></li>

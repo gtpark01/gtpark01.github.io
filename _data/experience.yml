@@ -23,7 +23,7 @@
   org: "Center for Quantum Information, Korea Institute of Science & Technology"
   period: "Jul. 2022 — Sept. 2022"
   advisor: "Dr. Hyang-Tag Lim"
-  logo: /assets/images/logos/kist.jpg
+  logo: /assets/images/logos/kist.png
   bullets:
     - "Formulated a Sagnac interferometer to generate high-purity entangled photon pairs via type-II spontaneous parametric down-conversion in PPKTP."
     - "Tuned lens spacing and crystal temperature to achieve 99 % visibility in the Hong-Ou-Mandel dip."

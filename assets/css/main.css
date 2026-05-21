@@ -1225,19 +1225,20 @@ strong { font-weight: 600; color: var(--color-ink); }
 .timeline-org em { color: var(--color-muted); font-style: normal; }
 /* Every institution logo occupies the same fixed box. object-fit:contain
    centers the mark inside while preserving aspect ratio — so square shields,
-   wide wordmarks, and everything in between read at the same visual size. */
+   wide wordmarks, and everything in between read at the same visual size.
+   Logos are pre-trimmed (transparent margins removed) so they fill the box. */
 .timeline-logo {
-  width: 56px;
-  height: 36px;
+  width: 84px;
+  height: 56px;
   object-fit: contain;
   object-position: center;
   display: inline-block;
   flex-shrink: 0;
-  border-radius: 4px;
-  /* White card backdrop so logos read clearly in both light and dark modes */
-  background: #fff;
-  padding: 4px 6px;
-  box-shadow: 0 0 0 1px var(--color-line);
+  border-radius: 6px;
+  /* Theme-adaptive backdrop: subtle in light mode, blends in dark mode */
+  background: var(--color-surface-2);
+  padding: 6px 10px;
+  border: 1px solid var(--color-line);
 }
 .timeline-meta { color: var(--color-muted); font-size: 0.9rem; margin-top: var(--space-2); }
 .timeline-note { color: var(--color-muted); font-size: 0.95rem; margin-top: var(--space-2); line-height: 1.6; }

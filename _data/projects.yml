@@ -1,22 +1,27 @@
-# Featured projects — separate from papers.
-- title: "[Project One — placeholder]"
+- title: "ML-Driven Deep-UV Antireflective Coatings"
   summary: >-
-    [One-line summary.] Short description of what this project is and the
-    technical approach.
+    Factorization-Machine-based binary optimization for DUV AR multilayers,
+    achieving 0.6 % average reflectance on curved CaF₂ lenses
+    (collaboration with KRICT).
   image: /assets/images/research-slides/research1.jpg
-  tags: [inverse-design, python]
-  link: "#"
+  tags: [optimization, antireflective, deep-uv]
+  link: "/publications/"
 
-- title: "[Project Two — placeholder]"
+- title: "Bayesian Thermal Emitter Design"
   summary: >-
-    [One-line summary.] What problem it solves and what is novel.
+    BOCS-DPP framework for pixelated 2D multiband selective thermal emitters,
+    developed at the Shiomi lab at the University of Tokyo. Uses a Python
+    RCWA (S⁴) backend with high-index dielectric Ge.
   image: /assets/images/research-slides/research2.jpg
-  tags: [deep-learning, optimization]
-  link: "#"
+  tags: [bayesian-optimization, rcwa, thermal-emitter]
+  link: "/research/"
 
-- title: "[Project Three — placeholder]"
+- title: "Microprism Films for Bifacial PV"
   summary: >-
-    [One-line summary.] Tools, results, links to repo or demo.
+    Wedge-shaped microprism sheets that redirect 81 % of light backward
+    toward bifacial perovskite PV cells. Outdoor measurements showed a
+    17 % average power-generation improvement (collaboration with Hyundai
+    Motor Group).
   image: /assets/images/research-slides/research3.jpg
-  tags: [photonics, simulation]
-  link: "#"
+  tags: [photovoltaics, microprism, lighttools]
+  link: "/publications/"

@@ -4,8 +4,9 @@ title: About
 permalink: /about/
 eyebrow: Who I am
 lede: >-
-  Physicist by training, engineer by current discipline. I think about how
-  computation can let us design optical structures we wouldn't otherwise dream up.
+  Physicist by training, engineer in pursuit. I use machine learning and
+  numerical optimization to design optical and photonic structures for energy,
+  sensing, and imaging.
 slug: about
 ---
 
@@ -21,21 +22,27 @@ slug: about
   <div class="about-bio prose" data-reveal>
     <h2>Bio</h2>
     <p>
-      [Placeholder bio paragraph.] I'm a first-year PhD student in Electrical
-      and Computer Engineering at the University of Michigan, Ann Arbor.
-      Previously, I earned a B.S. in Applied Physics and an M.S. in Physics
-      from Kyung Hee University in Seoul, South Korea.
+      I'm a Ph.D. student in Electrical and Computer Engineering at the
+      <strong>University of Michigan, Ann Arbor</strong>. I earned my B.S. in
+      Applied Physics and M.S. in Physics from <strong>Kyung Hee University</strong>,
+      where I worked in Prof. Sun-Kyung Kim's Nano Photonics Lab on
+      machine-learning-driven inverse design of optical coatings — collaborating
+      with KRICT on deep-UV multilayers and with Hyundai Motor Group on
+      microprism films for bifacial photovoltaics.
     </p>
     <p>
-      [Placeholder paragraph about research interests and motivation.] My
-      research sits at the intersection of physics, optimization, and machine
-      learning — using these tools to design photonic structures whose optical
-      response is specified up front and whose geometry emerges from
-      computation.
+      Most recently, I was a visiting researcher in Prof. Junichiro Shiomi's
+      Thermal Energy Engineering Lab at the <strong>University of Tokyo</strong>,
+      developing a Bayesian Optimization of Combinatorial Structures –
+      Determinantal Point Process (BOCS-DPP) framework for pixelated
+      multiband thermal emitters.
     </p>
     <p>
-      [Placeholder paragraph about non-research interests.] Outside the lab,
-      [hobbies, languages, anything else you want to share].
+      My research sits at the intersection of physics, computation, and design:
+      using factorization machines, Bayesian methods, and interpretable ML to
+      treat photonic design as a combinatorial optimization problem — and to
+      surface structures that traditional graded-index intuition would never
+      reach.
     </p>
   </div>
 </div>
@@ -76,6 +83,8 @@ slug: about
       <div class="timeline-body">
         <h3 class="timeline-title">{{ ex.role }}</h3>
         <p class="timeline-org">{{ ex.org }}</p>
+        {% if ex.advisor %}<p class="timeline-meta">Advisor: {{ ex.advisor }}</p>{% endif %}
+        {% if ex.project %}<p class="timeline-meta">Project: <em>{{ ex.project }}</em></p>{% endif %}
         <ul class="timeline-bullets">
           {% for b in ex.bullets %}<li>{{ b }}</li>{% endfor %}
         </ul>
@@ -95,19 +104,19 @@ slug: about
   <div class="interest-grid">
     <div class="interest-card" data-reveal>
       <h4>Inverse design</h4>
-      <p>[Placeholder text about why this interests you.]</p>
+      <p>Reframing photonic engineering as a search problem over discrete material choices.</p>
     </div>
     <div class="interest-card" data-reveal>
-      <h4>Numerical optimization</h4>
-      <p>[Placeholder text.]</p>
+      <h4>Interpretable ML</h4>
+      <p>Surrogates that are fast <em>and</em> give back design rules — not just answers.</p>
     </div>
     <div class="interest-card" data-reveal>
-      <h4>Photonics</h4>
-      <p>[Placeholder text.]</p>
+      <h4>Climate-mitigating optics</h4>
+      <p>Radiative cooling, selective emitters, and photovoltaic-enabling films.</p>
     </div>
     <div class="interest-card" data-reveal>
-      <h4>Machine learning</h4>
-      <p>[Placeholder text.]</p>
+      <h4>Quantum optics</h4>
+      <p>Where I started — entangled photon pairs and Hong-Ou-Mandel interference.</p>
     </div>
   </div>
 </section>

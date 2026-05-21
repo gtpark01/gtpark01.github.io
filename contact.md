@@ -4,13 +4,13 @@ title: Contact
 permalink: /contact/
 eyebrow: Say hello
 lede: >-
-  The fastest way to reach me is email. For everything else, the links below.
+  Fastest way to reach me is email. For everything else, the links below.
 slug: contact
 ---
 
 <section class="contact-hero" data-reveal>
-  <a class="contact-email" href="mailto:gtpark@umich.edu">
-    <span class="contact-email-text">gtpark@umich.edu</span>
+  <a class="contact-email" href="mailto:iharry01@khu.ac.kr">
+    <span class="contact-email-text">iharry01@khu.ac.kr</span>
     <span class="contact-email-icon">{% include icons.html name="arrow-up-right" %}</span>
   </a>
   <p class="contact-hint">Replies usually within a few days.</p>
@@ -22,7 +22,6 @@ slug: contact
     <p>
       Department of Electrical and Computer Engineering<br />
       University of Michigan, Ann Arbor<br />
-      [Building & room placeholder]<br />
       Ann Arbor, MI, USA
     </p>
   </div>

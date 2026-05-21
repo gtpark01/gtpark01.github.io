@@ -269,18 +269,16 @@ strong { font-weight: 600; color: var(--color-ink); }
   flex-shrink: 0;
 }
 .brand-mark {
-  font-family: var(--font-serif);
-  font-weight: 600;
-  font-size: 1.15rem;
-  letter-spacing: -0.02em;
-  width: 38px; height: 38px;
+  width: 40px; height: 40px;
   display: inline-grid; place-items: center;
   background: var(--color-ink);
   color: var(--color-bg);
-  border-radius: var(--radius-sm);
+  border-radius: 10px;
   transition: transform var(--dur) var(--ease-out), background var(--dur) var(--ease-out);
+  flex-shrink: 0;
 }
-.brand:hover .brand-mark { transform: rotate(-6deg) scale(1.05); }
+.brand-mark svg { width: 24px; height: 24px; display: block; }
+.brand:hover .brand-mark { transform: rotate(-4deg) scale(1.05); }
 .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
 .brand-name { font-weight: 600; font-size: 0.95rem; }
 .brand-sub { font-size: 0.72rem; color: var(--color-muted); letter-spacing: 0.04em; }
@@ -437,6 +435,9 @@ strong { font-weight: 600; color: var(--color-ink); }
   display: inline-block;
   overflow: hidden;
   vertical-align: top;
+  /* Room for descenders (g, j, y, p, q tails) inside the overflow:hidden mask */
+  padding-bottom: 0.22em;
+  margin-bottom: -0.12em;
 }
 .reveal-line { display: block; }
 .reveal-word > span, .reveal-line > span {
@@ -444,6 +445,7 @@ strong { font-weight: 600; color: var(--color-ink); }
   transform: translateY(115%);
   transition: transform 1100ms var(--ease-out);
   will-change: transform;
+  padding-bottom: 0.05em;
 }
 .is-revealed .reveal-word > span,
 .is-revealed .reveal-line > span,

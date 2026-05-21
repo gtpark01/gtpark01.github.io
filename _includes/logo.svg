@@ -1,0 +1,11 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+  <!-- Stylized "G" — geometric monogram, original mark -->
+  <path d="M22 12.5 A 7 7 0 1 0 22 19.5 L 22 16 L 17 16"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.6"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+  <!-- Photonics-inspired accent: a small point of light at the upper right -->
+  <circle cx="26" cy="9" r="1.6" fill="currentColor"/>
+</svg>

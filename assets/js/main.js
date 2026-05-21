@@ -187,6 +187,51 @@
     });
   }
 
+  /* ───────────── Active-section nav indicator (homepage only) ───────────── */
+  // Watch sections on the home page that map to nav links via data-section,
+  // and toggle .is-active on the matching nav link as you scroll.
+  const isHome =
+    document.body.classList.contains('page--home') ||
+    location.pathname === '/' ||
+    location.pathname === '';
+  const sectionEls = document.querySelectorAll('[data-section]');
+  const navLinks = document.querySelectorAll('.nav-link');
+  if (isHome && sectionEls.length && navLinks.length && 'IntersectionObserver' in window) {
+    const byHref = new Map();
+    navLinks.forEach((a) => {
+      const href = a.getAttribute('href');
+      if (href) byHref.set(href.replace(/\/$/, ''), a);
+    });
+    const setActive = (path) => {
+      navLinks.forEach((a) => a.classList.remove('is-active'));
+      if (!path) return;
+      const match = byHref.get(path.replace(/\/$/, ''));
+      if (match) match.classList.add('is-active');
+    };
+    const visible = new Set();
+    const sio = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) visible.add(e.target);
+          else visible.delete(e.target);
+        });
+        // Of currently visible sections, prefer the one closest to viewport top.
+        let top = null;
+        let topY = Infinity;
+        visible.forEach((el) => {
+          const y = el.getBoundingClientRect().top;
+          if (y < topY) {
+            topY = y;
+            top = el;
+          }
+        });
+        setActive(top ? top.dataset.section : null);
+      },
+      { rootMargin: '-30% 0px -55% 0px', threshold: 0 }
+    );
+    sectionEls.forEach((s) => sio.observe(s));
+  }
+
   /* ───────────── Smooth-scroll for in-page anchors ───────────── */
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener('click', (e) => {

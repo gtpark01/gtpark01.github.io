@@ -56,11 +56,11 @@
   --font-serif: var(--font-sans);    /* aliased — site uses Inter throughout */
   --font-mono:  var(--font-sans);    /* aliased — site uses Inter throughout */
 
-  /* Type scale */
-  --fs-display:  clamp(3rem, 9vw, 8rem);
-  --fs-hero:     clamp(3rem, 8vw, 7rem);
-  --fs-h1:       clamp(2rem, 4.5vw, 3.5rem);
-  --fs-h2:       clamp(1.625rem, 3.2vw, 2.5rem);
+  /* Type scale — restrained, confident */
+  --fs-display:  clamp(2.75rem, 7vw, 5.5rem);
+  --fs-hero:     clamp(2.5rem, 6vw, 5rem);
+  --fs-h1:       clamp(1.875rem, 4vw, 3.25rem);
+  --fs-h2:       clamp(1.5rem, 3vw, 2.25rem);
   --fs-h3:       clamp(1.25rem, 2vw, 1.5rem);
   --fs-body:     1.0625rem;
   --fs-small:    0.875rem;
@@ -797,10 +797,9 @@ strong { font-weight: 600; color: var(--color-ink); }
 }
 .research-row-content { display: flex; flex-direction: column; gap: var(--space-1); }
 .research-row-title {
-  font-family: var(--font-serif);
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-size: clamp(1.375rem, 2.5vw, 2rem);
   font-weight: 500;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.025em;
   transition: color var(--dur) var(--ease-out), transform var(--dur) var(--ease-out);
 }
 .research-row:hover .research-row-title { color: var(--color-accent); transform: translateX(8px); }
@@ -849,8 +848,9 @@ strong { font-weight: 600; color: var(--color-ink); }
   color: var(--color-muted);
 }
 .research-area-title {
-  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-size: clamp(1.75rem, 3.5vw, 2.75rem);
   font-weight: 500;
+  letter-spacing: -0.03em;
 }
 .research-area-body {
   display: grid;
@@ -1296,9 +1296,9 @@ strong { font-weight: 600; color: var(--color-ink); }
 }
 .contact-email {
   display: inline-flex; align-items: center; gap: var(--space-4);
-  font-size: clamp(2rem, 6vw, 4.5rem);
+  font-size: clamp(1.75rem, 4.5vw, 3.25rem);
   font-weight: 500;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.035em;
   color: var(--color-ink);
   transition: color var(--dur) var(--ease-out), gap var(--dur) var(--ease-out);
 }
@@ -1367,10 +1367,10 @@ strong { font-weight: 600; color: var(--color-ink); }
   margin-bottom: var(--space-4);
 }
 .footer-headline {
-  font-size: clamp(2.5rem, 8vw, 6rem);
+  font-size: clamp(2rem, 5.5vw, 4rem);
   font-weight: 500;
-  letter-spacing: -0.045em;
-  line-height: 0.95;
+  letter-spacing: -0.04em;
+  line-height: 0.98;
   margin-bottom: var(--space-7);
 }
 .footer-cta {

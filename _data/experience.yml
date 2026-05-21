@@ -3,6 +3,7 @@
   period: "Sept. 2025 — Nov. 2025"
   advisor: "Prof. Junichiro Shiomi"
   project: "Machine learning-based thermal emitter design"
+  logo: /assets/images/logos/u-tokyo.svg
   bullets:
     - "Developed a Bayesian Optimization of Combinatorial Structures – Determinantal Point Process (BOCS-DPP) framework for pixelated 2D multiband selective thermal emitter design."
     - "Implemented a Python-based RCWA solver (S⁴) to generate candidate structures and evaluate figures of merit, using high-index dielectric Ge to avoid the convergence issues typical of metallic structures."
@@ -12,6 +13,7 @@
   period: "Jan. 2023 — Present"
   advisor: "Prof. Sun-Kyung Kim"
   project: "Machine learning-based antireflective coating design · Microprism design for PV efficiency"
+  logo: /assets/images/logos/kyung-hee.svg
   bullets:
     - "Developed a Factorization-Machine-based binary optimization framework for deep-UV antireflective coatings, achieving 0.6 % average reflectance on curved CaF₂ lenses (collab. with KRICT)."
     - "Built Python tooling for phasor analysis of optimized DUV AR coatings and broadband IR filters."
@@ -21,6 +23,7 @@
   org: "Center for Quantum Information, Korea Institute of Science & Technology"
   period: "Jul. 2022 — Sept. 2022"
   advisor: "Dr. Hyang-Tag Lim"
+  logo: /assets/images/logos/kist.jpg
   bullets:
     - "Formulated a Sagnac interferometer to generate high-purity entangled photon pairs via type-II spontaneous parametric down-conversion in PPKTP."
     - "Tuned lens spacing and crystal temperature to achieve 99 % visibility in the Hong-Ou-Mandel dip."
@@ -28,5 +31,6 @@
 - role: Teaching Assistant
   org: "Semiconductor and Properties Processing Lab, Kyung Hee University"
   period: "Mar. 2025 — Jun. 2025"
+  logo: /assets/images/logos/kyung-hee.svg
   bullets:
     - "Guided advanced undergraduates in semiconductor processing techniques: thermal/e-beam evaporation, ellipsometry, AFM, FTIR, RIE, and laser-interference lithography."

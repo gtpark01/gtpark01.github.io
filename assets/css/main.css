@@ -1213,8 +1213,29 @@ strong { font-weight: 600; color: var(--color-ink); }
   font-weight: 500;
   margin-bottom: var(--space-2);
 }
-.timeline-org { color: var(--color-ink-soft); font-size: 0.95rem; }
-.timeline-org span { color: var(--color-muted); }
+.timeline-org {
+  color: var(--color-ink-soft);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+.timeline-org > span { color: var(--color-ink-soft); }
+.timeline-org em { color: var(--color-muted); font-style: normal; }
+.timeline-logo {
+  height: 22px;
+  width: auto;
+  max-width: 80px;
+  object-fit: contain;
+  display: inline-block;
+  flex-shrink: 0;
+  border-radius: 3px;
+  /* Subtle white-card backdrop for any logo so it works on both themes */
+  background: #fff;
+  padding: 3px 6px;
+  box-shadow: 0 0 0 1px var(--color-line);
+}
 .timeline-meta { color: var(--color-muted); font-size: 0.9rem; margin-top: var(--space-2); }
 .timeline-note { color: var(--color-muted); font-size: 0.95rem; margin-top: var(--space-2); line-height: 1.6; }
 .timeline-bullets { list-style: none; margin-top: var(--space-3); display: flex; flex-direction: column; gap: var(--space-2); }
@@ -1454,6 +1475,11 @@ strong { font-weight: 600; color: var(--color-ink); }
   margin-bottom: var(--space-5);
   color: var(--color-ink);
 }
+/* Reliable spacing between words in multi-word page titles
+   (HTML whitespace inside Liquid loops can collapse; this is robust). */
+.page-title .reveal-word + .reveal-word { margin-left: 0.3em; }
+/* CV title — extra room between "Curriculum" and "Vitae" */
+.page--cv .page-title .reveal-word + .reveal-word { margin-left: 0.55em; }
 .page-lede {
   max-width: 56ch;
   color: var(--color-ink-soft);

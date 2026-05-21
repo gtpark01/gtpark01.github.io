@@ -1,8 +1,8 @@
 # Add your real URLs here. The icon field maps to an SVG in _includes/icons.html
 - name: Email
   icon: mail
-  url: "mailto:iharry01@khu.ac.kr"
-  label: iharry01@khu.ac.kr
+  url: "mailto:geontae@umich.edu"
+  label: geontae@umich.edu
 
 - name: Google Scholar
   icon: scholar

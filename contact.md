@@ -9,8 +9,8 @@ slug: contact
 ---
 
 <section class="contact-hero" data-reveal>
-  <a class="contact-email" href="mailto:iharry01@khu.ac.kr">
-    <span class="contact-email-text">iharry01@khu.ac.kr</span>
+  <a class="contact-email" href="mailto:geontae@umich.edu">
+    <span class="contact-email-text">geontae@umich.edu</span>
     <span class="contact-email-icon">{% include icons.html name="arrow-up-right" %}</span>
   </a>
   <p class="contact-hint">Replies usually within a few days.</p>

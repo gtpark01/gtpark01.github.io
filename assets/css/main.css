@@ -1223,17 +1223,20 @@ strong { font-weight: 600; color: var(--color-ink); }
 }
 .timeline-org > span { color: var(--color-ink-soft); }
 .timeline-org em { color: var(--color-muted); font-style: normal; }
+/* Every institution logo occupies the same fixed box. object-fit:contain
+   centers the mark inside while preserving aspect ratio — so square shields,
+   wide wordmarks, and everything in between read at the same visual size. */
 .timeline-logo {
-  height: 22px;
-  width: auto;
-  max-width: 80px;
+  width: 56px;
+  height: 36px;
   object-fit: contain;
+  object-position: center;
   display: inline-block;
   flex-shrink: 0;
-  border-radius: 3px;
-  /* Subtle white-card backdrop for any logo so it works on both themes */
+  border-radius: 4px;
+  /* White card backdrop so logos read clearly in both light and dark modes */
   background: #fff;
-  padding: 3px 6px;
+  padding: 4px 6px;
   box-shadow: 0 0 0 1px var(--color-line);
 }
 .timeline-meta { color: var(--color-muted); font-size: 0.9rem; margin-top: var(--space-2); }

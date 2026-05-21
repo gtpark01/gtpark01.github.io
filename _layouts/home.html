@@ -1,70 +1,210 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>{{ site.title }} - Home</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
-</head>
-<body>
-  {% include nav.html %}
+---
+layout: default
+---
 
-  <!-- Hero Section: 50% text (left), 50% image (right) -->
-  <section class="hero-full-split">
-  <!-- LEFT COLUMN -->
-  <div class="hero-left-content">
-    <div class="hero-left-inner">
-     <h1 class="hero-title">
-       I’m <span class="my-name">Geon-Tae Park</span>, 
-       <br>
-       a Physics MS student.
-     </h1>
+<!-- ───────────────────────── HERO ───────────────────────── -->
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="hero-bg" aria-hidden="true">
+    <div class="hero-grain"></div>
+    <div class="hero-orb hero-orb--a"></div>
+    <div class="hero-orb hero-orb--b"></div>
+  </div>
 
-      <p class="hero-keywords">
-       <span id="keyword-rotator"></span>
+  <div class="container hero-grid">
+    <div class="hero-left">
+      <p class="hero-eyebrow" data-reveal>
+        <span class="hero-eyebrow-dot"></span>
+        <span class="hero-eyebrow-text">PhD Researcher · Ann Arbor, MI</span>
       </p>
-      <script>
-        const keywords = [
-          "Inverse Design",
-          "Machine Learning-based Optimization",
-          "Light-Manipulating Structures"
-        ];
-        let currentIndex = 0;
-        const rotator = document.getElementById("keyword-rotator");
-        rotator.textContent = keywords[currentIndex];
 
-        function cycleKeywords() {
-          setTimeout(() => rotator.classList.add("hidden"), 2000);
-          setTimeout(() => {
-            currentIndex = (currentIndex + 1) % keywords.length;
-            rotator.textContent = keywords[currentIndex];
-            rotator.classList.remove("hidden");
-          }, 3000);
-        }
+      <h1 id="hero-heading" class="hero-title">
+        <span class="reveal-line"><span>Geon-Tae</span></span>
+        <span class="reveal-line"><span>Park</span></span>
+      </h1>
 
-        setInterval(cycleKeywords, 4000);
-      </script>
-      
-      <!-- (Optional) Hero Buttons: Keep if you still want them -->
-      <div class="hero-buttons">
-        <a href="/about" class="hero-btn">ABOUT ME</a>
-        <a href="/contact" class="hero-btn-outline">CONTACT</a>
+      <div class="hero-meta" data-reveal>
+        <p class="hero-role">PhD Researcher, Electrical and Computer Engineering</p>
+        <p class="hero-aff">University of Michigan, Ann Arbor</p>
       </div>
+
+      <p class="hero-lede" data-reveal>
+        I design photonic structures by specifying their target optical response
+        and letting computation find the geometry — through inverse design,
+        machine learning, and numerical optimization.
+      </p>
+
+      <div class="hero-buttons" data-reveal>
+        <a href="{{ '/research/' | relative_url }}" class="btn btn--primary">
+          <span>Explore research</span>
+          <span class="btn-icon">{% include icons.html name="arrow-right" %}</span>
+        </a>
+        <a href="{{ '/cv/' | relative_url }}" class="btn btn--ghost">
+          <span>View CV</span>
+        </a>
+      </div>
+
+      <div class="hero-social" data-reveal>
+        {% for s in site.data.social %}
+        <a href="{{ s.url }}" class="hero-social-link" aria-label="{{ s.name }}" target="_blank" rel="noopener">
+          {% include icons.html name=s.icon %}
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="hero-right" data-reveal>
+      <figure class="hero-figure" data-tilt>
+        <div class="hero-figure-frame">
+          <img src="{{ '/assets/images/hero.jpg' | relative_url }}" alt="Portrait of Geon-Tae Park" loading="eager" />
+          <div class="hero-figure-overlay" aria-hidden="true"></div>
+        </div>
+        <figcaption class="hero-figure-meta">
+          <span class="hero-figure-meta-num">2025—</span>
+          <span class="hero-figure-meta-text">Ann Arbor, Michigan</span>
+        </figcaption>
+      </figure>
     </div>
   </div>
 
-  <!-- RIGHT COLUMN: Hero Image -->
-  <div class="hero-right-image">
-    <img src="{{ '/assets/images/hero.jpg' | relative_url }}" alt="Hero Image">
+  <a href="#intro" class="hero-scroll" aria-label="Scroll to content">
+    <span class="hero-scroll-text">Scroll</span>
+    <span class="hero-scroll-line"></span>
+  </a>
+</section>
+
+<!-- ───────────────────────── INTRO STRIP ───────────────────────── -->
+<section id="intro" class="intro" data-reveal>
+  <div class="container intro-grid">
+    <p class="intro-eyebrow">— Currently</p>
+    <div class="intro-body">
+      <p class="intro-text">
+        I'm a first-year <strong>PhD student in Electrical and Computer Engineering</strong>
+        at the <strong>University of Michigan, Ann Arbor</strong>. Previously, I completed
+        my B.S. in Applied Physics and M.S. in Physics at <strong>Kyung Hee University</strong>,
+        where I focused on inverse-design methods for photonic structures.
+      </p>
+      <a href="{{ '/about/' | relative_url }}" class="link-arrow-text">
+        More about me {% include icons.html name="arrow-right" %}
+      </a>
+    </div>
   </div>
 </section>
 
-<!-- Below Hero Content (unchanged) -->
-<section class="home-content">
-  {{ content }}
+<!-- ───────────────────────── RESEARCH AREAS ───────────────────────── -->
+<section class="section section--research" id="research-preview">
+  <div class="container">
+    <header class="section-header" data-reveal>
+      <p class="section-eyebrow">— Research</p>
+      <h2 class="section-title">
+        <span class="reveal-line"><span>Three directions,</span></span>
+        <span class="reveal-line"><span>one underlying question.</span></span>
+      </h2>
+      <p class="section-lede">
+        How do we design structures whose response — not whose shape — is the
+        starting point of the conversation?
+      </p>
+    </header>
+
+    <ol class="research-list">
+      {% for area in site.data.research_areas %}
+      <li data-reveal>
+        <a href="{{ '/research/' | relative_url }}" class="research-row">
+          <span class="research-row-num">{{ area.number }}</span>
+          <div class="research-row-content">
+            <h3 class="research-row-title">{{ area.title }}</h3>
+            <p class="research-row-short">{{ area.short }}</p>
+          </div>
+          <div class="research-row-image">
+            <img src="{{ area.image | relative_url }}" alt="" loading="lazy" />
+          </div>
+          <span class="research-row-arrow" aria-hidden="true">{% include icons.html name="arrow-up-right" %}</span>
+        </a>
+      </li>
+      {% endfor %}
+    </ol>
+
+    <div class="section-footer" data-reveal>
+      <a href="{{ '/research/' | relative_url }}" class="btn btn--ghost">
+        <span>All research areas</span>
+        <span class="btn-icon">{% include icons.html name="arrow-right" %}</span>
+      </a>
+    </div>
+  </div>
 </section>
 
+<!-- ───────────────────────── FEATURED PUBLICATIONS ───────────────────────── -->
+<section class="section section--pubs section--dark">
+  <div class="container">
+    <header class="section-header" data-reveal>
+      <p class="section-eyebrow">— Selected publications</p>
+      <h2 class="section-title">
+        <span class="reveal-line"><span>Recent work,</span></span>
+        <span class="reveal-line"><span>in the open.</span></span>
+      </h2>
+    </header>
 
-  {% include footer.html %}
-</body>
-</html>
+    <ul class="pub-list">
+      {% assign featured_pubs = site.data.publications | where: "featured", true %}
+      {% for pub in featured_pubs %}
+      <li class="pub-row" data-reveal>
+        <div class="pub-row-year">{{ pub.year }}</div>
+        <div class="pub-row-body">
+          <h3 class="pub-row-title">{{ pub.title }}</h3>
+          <p class="pub-row-authors">{{ pub.authors }}</p>
+          <p class="pub-row-venue"><em>{{ pub.venue }}</em></p>
+        </div>
+        <div class="pub-row-actions">
+          {% if pub.pdf %}
+          <a href="{{ pub.pdf | relative_url }}" class="pub-action" target="_blank" rel="noopener" aria-label="PDF">
+            {% include icons.html name="pdf" %}
+            <span>PDF</span>
+          </a>
+          {% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+
+    <div class="section-footer" data-reveal>
+      <a href="{{ '/publications/' | relative_url }}" class="btn btn--inverse">
+        <span>All publications</span>
+        <span class="btn-icon">{% include icons.html name="arrow-right" %}</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── NEWS / TIMELINE ───────────────────────── -->
+<section class="section section--news">
+  <div class="container news-grid">
+    <header class="section-header section-header--side" data-reveal>
+      <p class="section-eyebrow">— Latest</p>
+      <h2 class="section-title">
+        <span class="reveal-line"><span>News &amp; updates</span></span>
+      </h2>
+      <p class="section-lede">
+        Talks, papers, awards, and the occasional life update.
+      </p>
+    </header>
+
+    <ol class="news-list">
+      {% for item in site.data.news limit: 5 %}
+      <li class="news-item" data-reveal>
+        <time class="news-date" datetime="{{ item.date }}">
+          {{ item.date | date: "%b %d, %Y" }}
+        </time>
+        <p class="news-body">{{ item.body | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+        {% if item.tag %}<span class="news-tag news-tag--{{ item.tag }}">{{ item.tag }}</span>{% endif %}
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+{% if content and content != "" %}
+<section class="section section--prose">
+  <div class="container prose">
+    {{ content }}
+  </div>
+</section>
+{% endif %}

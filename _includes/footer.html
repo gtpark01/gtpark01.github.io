@@ -1,4 +1,64 @@
-<footer>
-  <p>&copy; {{ site.time | date: "%Y" }} Geon-Tae Park | All Rights Reserved</p>
-</footer>
+<footer class="site-footer" data-reveal>
+  <div class="footer-cta-wrap">
+    <div class="container">
+      <p class="footer-eyebrow">— Get in touch</p>
+      <h2 class="footer-headline">
+        <span class="reveal-line"><span>Have an idea</span></span>
+        <span class="reveal-line"><span>worth exploring?</span></span>
+      </h2>
+      <a class="footer-cta" href="mailto:gtpark@umich.edu">
+        <span class="footer-cta-text">gtpark@umich.edu</span>
+        <span class="footer-cta-icon">{% include icons.html name="arrow-up-right" %}</span>
+      </a>
+    </div>
+  </div>
 
+  <div class="container footer-grid">
+    <div class="footer-col footer-col--brand">
+      <p class="footer-brand-mark">{{ site.short_name }}</p>
+      <p class="footer-brand-name">{{ site.title }}</p>
+      <p class="footer-brand-sub">{{ site.tagline }}<br />{{ site.author.affiliation }}</p>
+    </div>
+
+    <div class="footer-col">
+      <p class="footer-col-title">Site</p>
+      <ul class="footer-links">
+        {% for item in site.data.navigation %}
+        <li><a href="{{ item.url | relative_url }}">{{ item.name }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <p class="footer-col-title">Elsewhere</p>
+      <ul class="footer-links">
+        {% for s in site.data.social %}
+        <li>
+          <a href="{{ s.url }}" target="_blank" rel="noopener">
+            {{ s.label }}
+            <span class="link-arrow" aria-hidden="true">{% include icons.html name="arrow-up-right" %}</span>
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="footer-col footer-col--colophon">
+      <p class="footer-col-title">Colophon</p>
+      <p class="footer-colophon-text">
+        Set in <em>Fraunces</em> &amp; <em>Inter</em>. Built with Jekyll, hosted on GitHub Pages.
+        Source available on <a href="https://github.com/gtpark01/gtpark01.github.io" target="_blank" rel="noopener">GitHub</a>.
+      </p>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>© {{ site.time | date: "%Y" }} {{ site.author.name }}.</p>
+    <p>All rights reserved.</p>
+  </div>
+
+  <!-- Decorative oversized wordmark -->
+  <div class="footer-wordmark" aria-hidden="true">
+    <span>{{ site.title | upcase }}</span>
+  </div>
+</footer>

@@ -1,0 +1,28 @@
+- number: "01"
+  title: Inverse Design
+  short: Designing structures by specifying the response.
+  description: >-
+    [Placeholder description.] Inverse design flips the conventional workflow:
+    instead of guessing a geometry and simulating it, we start from the desired
+    optical response and let optimization find the structure. This frames
+    photonics as a high-dimensional search problem.
+  image: /assets/images/research-slides/research1.jpg
+
+- number: "02"
+  title: Machine-Learning Optimization
+  short: Learning fast surrogates for slow simulators.
+  description: >-
+    [Placeholder description.] Full-wave electromagnetic simulations are
+    expensive. By training neural surrogates and pairing them with
+    gradient-based or evolutionary optimizers, we explore design spaces orders
+    of magnitude larger than brute-force sweeps could reach.
+  image: /assets/images/research-slides/research2.jpg
+
+- number: "03"
+  title: Light-Manipulating Structures
+  short: Multilayers, metasurfaces, and beyond.
+  description: >-
+    [Placeholder description.] From binary multilayer stacks to subwavelength
+    metasurfaces, we engineer geometries that bend, filter, and concentrate
+    light to serve targeted applications — sensing, imaging, and energy.
+  image: /assets/images/research-slides/research3.jpg

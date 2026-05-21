@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<section class="page-header" data-reveal>
+  <div class="container">
+    {% if page.eyebrow %}<p class="page-eyebrow">— {{ page.eyebrow }}</p>{% endif %}
+    <h1 class="page-title">
+      {% assign words = page.title | split: ' ' %}
+      {% for w in words %}<span class="reveal-word"><span>{{ w }}</span></span>{% unless forloop.last %} {% endunless %}{% endfor %}
+    </h1>
+    {% if page.lede %}<p class="page-lede">{{ page.lede }}</p>{% endif %}
+  </div>
+</section>
+
+<section class="page-body">
+  <div class="container">
+    {{ content }}
+  </div>
+</section>

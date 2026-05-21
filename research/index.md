@@ -1,47 +1,54 @@
 ---
-layout: default
+layout: page
 title: Research
 permalink: /research/
+eyebrow: What I work on
+lede: >-
+  My work sits at the intersection of physics, optimization, and machine
+  learning — using computation to discover photonic structures whose response
+  is the starting point of the design conversation.
+slug: research
 ---
-<section class="research-section">
 
-  <!-- Item 1: Image left, text right -->
-  <div class="research-item">
-    <div class="research-image">
-      <img src="{{ '/assets/images/research-slides/research1.jpg' | relative_url }}" alt="Topic 1">
+<div class="research-philosophy" data-reveal>
+  <p class="research-philosophy-text">
+    [Placeholder.] A short paragraph about the overarching question that ties
+    my research areas together — why these three directions are facets of a
+    single underlying inquiry.
+  </p>
+</div>
+
+<section class="research-areas">
+  {% for area in site.data.research_areas %}
+  <article class="research-area" data-reveal>
+    <div class="research-area-header">
+      <span class="research-area-num">{{ area.number }}</span>
+      <h2 class="research-area-title">{{ area.title }}</h2>
     </div>
-    <div class="research-description">
-      <h2>Research Topic 1</h2>
-      <p>
-        A brief summary of topic 1 goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.  
-      </p>
+    <div class="research-area-body">
+      <div class="research-area-text">
+        <p class="research-area-short">{{ area.short }}</p>
+        <p class="research-area-description">{{ area.description }}</p>
+      </div>
+      <div class="research-area-figure">
+        <img src="{{ area.image | relative_url }}" alt="" loading="lazy" />
+      </div>
     </div>
+  </article>
+  {% endfor %}
+</section>
+
+<section class="research-collab" data-reveal>
+  <div class="research-collab-card">
+    <p class="section-eyebrow">— Open to collaborate</p>
+    <h3>Working on something related?</h3>
+    <p>
+      I'm always interested in conversations about inverse design, photonics,
+      and the methodological side of ML-driven engineering. Drop me a line.
+    </p>
+    <a href="{{ '/contact/' | relative_url }}" class="btn btn--primary">
+      <span>Get in touch</span>
+      <span class="btn-icon">{% include icons.html name="arrow-right" %}</span>
+    </a>
   </div>
-
-  <!-- Item 2: Image right, text left -->
-  <div class="research-item">
-    <div class="research-image">
-      <img src="{{ '/assets/images/research-slides/research2.jpg' | relative_url }}" alt="Topic 2">
-    </div>
-    <div class="research-description">
-      <h2>Research Topic 2</h2>
-      <p>
-        A brief summary of topic 2 goes here. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
-      </p>
-    </div>
-  </div>
-
-  <!-- Item 3: Image left, text right -->
-  <div class="research-item">
-    <div class="research-image">
-      <img src="{{ '/assets/images/research-slides/research3.jpg' | relative_url }}" alt="Topic 3">
-    </div>
-    <div class="research-description">
-      <h2>Research Topic 3</h2>
-      <p>
-        A brief summary of topic 3 goes here. Sed nisi. Nulla quis sem at nibh elementum imperdiet.
-      </p>
-    </div>
-  </div>
-
 </section>

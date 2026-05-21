@@ -1,0 +1,53 @@
+# Site metadata
+title: Geon-Tae Park
+short_name: GTP
+tagline: PhD Student in Electrical and Computer Engineering
+description: >-
+  Geon-Tae Park — PhD researcher at the University of Michigan working on
+  inverse design, machine-learning-driven optimization, and light-manipulating
+  photonic structures.
+author:
+  name: Geon-Tae Park
+  email: # add your @umich.edu email here
+  affiliation: University of Michigan, Ann Arbor
+  department: Department of Electrical and Computer Engineering
+
+# URLs
+url: "https://gtpark01.github.io"
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+include:
+  - _pages
+
+# Kramdown options
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Sass
+sass:
+  style: compressed
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: page
+
+# Plugins (GitHub Pages safe-list)
+plugins:
+  - jekyll-seo-tag
+
+# Exclude from build
+exclude:
+  - README.md
+  - CLAUDE.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - node_modules/

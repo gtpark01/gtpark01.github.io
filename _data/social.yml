@@ -1,0 +1,21 @@
+# Add your real URLs here. The icon field maps to an SVG in _includes/icons.html
+- name: Email
+  icon: mail
+  url: "mailto:gtpark@umich.edu"
+  label: gtpark@umich.edu
+- name: Google Scholar
+  icon: scholar
+  url: "#"
+  label: Google Scholar
+- name: ORCID
+  icon: orcid
+  url: "#"
+  label: ORCID
+- name: GitHub
+  icon: github
+  url: "https://github.com/gtpark01"
+  label: GitHub
+- name: LinkedIn
+  icon: linkedin
+  url: "#"
+  label: LinkedIn

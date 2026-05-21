@@ -1,0 +1,27 @@
+# Most recent first. Dates are YYYY-MM-DD.
+- date: 2025-09-01
+  body: >-
+    Started Ph.D. in Electrical and Computer Engineering at the University of
+    Michigan, Ann Arbor.
+  tag: milestone
+
+- date: 2025-06-15
+  body: >-
+    [Placeholder] New paper accepted to *IEEE [Journal]*.
+  tag: publication
+
+- date: 2025-02-20
+  body: >-
+    [Placeholder] Awarded the [Award Name] for outstanding graduate research.
+  tag: award
+
+- date: 2024-11-10
+  body: >-
+    [Placeholder] Invited talk at *[Conference Name]* on inverse-design methods
+    for photonic structures.
+  tag: talk
+
+- date: 2024-08-05
+  body: >-
+    [Placeholder] Paper published in *Advanced Optical Materials*.
+  tag: publication

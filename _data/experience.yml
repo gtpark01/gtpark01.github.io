@@ -1,0 +1,19 @@
+- role: Graduate Student Researcher
+  org: University of Michigan, Ann Arbor
+  period: "2025 — Present"
+  bullets:
+    - "[Placeholder bullet about your PhD research focus.]"
+    - "[Placeholder bullet about methods or contributions.]"
+
+- role: Graduate Researcher
+  org: Kyung Hee University
+  period: "2023 — 2025"
+  bullets:
+    - "[Placeholder bullet about MS thesis work.]"
+    - "[Placeholder bullet about publications or collaborations.]"
+
+- role: Undergraduate Research Intern
+  org: "[Lab Name], Kyung Hee University"
+  period: "2022 — 2023"
+  bullets:
+    - "[Placeholder bullet about early research experience.]"

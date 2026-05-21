@@ -1,0 +1,47 @@
+# Add publications here. Most recent first.
+# Required: title, authors, venue, year, pdf
+# Optional: abstract, doi, code, slides, bibtex, tags, featured (true/false)
+
+- title: "[Title — placeholder for Park 2025 IEEE paper]"
+  authors: "G.-T. Park, et al."
+  venue: "IEEE [Journal Name]"
+  year: 2025
+  pdf: /papers/Park2025_IEEE.pdf
+  doi: "#"
+  abstract: >-
+    [Placeholder abstract. Replace with the real abstract from your IEEE paper.]
+  tags: [photonics, optimization]
+  featured: true
+
+- title: "[Title — placeholder for Park 2024 Advanced Optical Materials]"
+  authors: "G.-T. Park, et al."
+  venue: "Advanced Optical Materials"
+  year: 2024
+  pdf: /papers/Park2024_AdvancedOpticalMaterials.pdf
+  doi: "#"
+  abstract: >-
+    [Placeholder abstract for the Advanced Optical Materials paper.]
+  tags: [optics, inverse-design]
+  featured: true
+
+- title: "[Title — placeholder for Park 2024 Binary Optimization of Multilayers]"
+  authors: "G.-T. Park, et al."
+  venue: "[Journal name]"
+  year: 2024
+  pdf: /papers/Park2024_BinaryOptimizationMultilayers.pdf
+  doi: "#"
+  abstract: >-
+    [Placeholder abstract for the binary optimization paper.]
+  tags: [optimization, multilayers]
+  featured: false
+
+- title: "[Title — placeholder for Yu 2024 Nanophotonics paper (co-author)]"
+  authors: "[First Author], …, G.-T. Park, …"
+  venue: "Nanophotonics"
+  year: 2024
+  pdf: /papers/Yu2024_Nanophotonics.pdf
+  doi: "#"
+  abstract: >-
+    [Placeholder abstract for the Nanophotonics co-authored paper.]
+  tags: [nanophotonics]
+  featured: false

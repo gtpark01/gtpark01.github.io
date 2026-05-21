@@ -1,0 +1,9 @@
+# Small stat counters for the hero / about strip.
+- value: "4"
+  label: Peer-reviewed papers
+- value: "3+"
+  label: Research areas
+- value: "2"
+  label: Universities
+- value: "1"
+  label: Ph.D. in progress

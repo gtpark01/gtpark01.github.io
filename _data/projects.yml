@@ -1,0 +1,22 @@
+# Featured projects — separate from papers.
+- title: "[Project One — placeholder]"
+  summary: >-
+    [One-line summary.] Short description of what this project is and the
+    technical approach.
+  image: /assets/images/research-slides/research1.jpg
+  tags: [inverse-design, python]
+  link: "#"
+
+- title: "[Project Two — placeholder]"
+  summary: >-
+    [One-line summary.] What problem it solves and what is novel.
+  image: /assets/images/research-slides/research2.jpg
+  tags: [deep-learning, optimization]
+  link: "#"
+
+- title: "[Project Three — placeholder]"
+  summary: >-
+    [One-line summary.] Tools, results, links to repo or demo.
+  image: /assets/images/research-slides/research3.jpg
+  tags: [photonics, simulation]
+  link: "#"

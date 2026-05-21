@@ -60,10 +60,7 @@ slug: about
       <div class="timeline-period">{{ ed.period }}</div>
       <div class="timeline-body">
         <h3 class="timeline-title">{{ ed.degree }}</h3>
-        <p class="timeline-org">
-          {% if ed.logo %}<img src="{{ ed.logo | relative_url }}" alt="" class="timeline-logo" loading="lazy" />{% endif %}
-          <span>{{ ed.school }} · <em>{{ ed.location }}</em></span>
-        </p>
+        <p class="timeline-org">{{ ed.school }} · <span>{{ ed.location }}</span></p>
         {% if ed.advisor %}<p class="timeline-meta">Advisor: {{ ed.advisor }}</p>{% endif %}
         {% if ed.note %}<p class="timeline-note">{{ ed.note | markdownify | remove: '<p>' | remove: '</p>' }}</p>{% endif %}
       </div>
@@ -85,10 +82,7 @@ slug: about
       <div class="timeline-period">{{ ex.period }}</div>
       <div class="timeline-body">
         <h3 class="timeline-title">{{ ex.role }}</h3>
-        <p class="timeline-org">
-          {% if ex.logo %}<img src="{{ ex.logo | relative_url }}" alt="" class="timeline-logo" loading="lazy" />{% endif %}
-          <span>{{ ex.org }}</span>
-        </p>
+        <p class="timeline-org">{{ ex.org }}</p>
         {% if ex.advisor %}<p class="timeline-meta">Advisor: {{ ex.advisor }}</p>{% endif %}
         {% if ex.project %}<p class="timeline-meta">Project: <em>{{ ex.project }}</em></p>{% endif %}
         <ul class="timeline-bullets">

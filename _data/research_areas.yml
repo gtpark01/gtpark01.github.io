@@ -8,7 +8,9 @@
     combinatorial optimization problem, using factorization machines and
     Bayesian methods over discrete material choices to find stacks that match
     or exceed continuous graded-index references.
-  image: /assets/images/research-slides/research1.jpg
+  images:
+    - /assets/images/research-slides/research1a.jpg
+    - /assets/images/research-slides/research1b.jpg
 
 - number: "02"
   title: Machine-Learning-Guided Optimization
@@ -19,7 +21,9 @@
     surrogate these simulators — letting us probe the design space orders of
     magnitude faster while keeping the physics legible enough to draw design
     rules from.
-  image: /assets/images/research-slides/research2.jpg
+  images:
+    - /assets/images/research-slides/research2a.jpg
+    - /assets/images/research-slides/research2b.jpg
 
 - number: "03"
   title: Light-Manipulating Structures for Energy & Imaging
@@ -29,4 +33,6 @@
     spans deep-UV conformal coatings for lithography optics, ultrathin IR
     coatings for thermal cameras, microprism films that boost bifacial PV
     output by ~17 %, and pixelated multiband thermal emitters.
-  image: /assets/images/research-slides/research3.jpg
+  images:
+    - /assets/images/research-slides/research3a.jpg
+    - /assets/images/research-slides/research3b.jpg

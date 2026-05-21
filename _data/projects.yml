@@ -3,7 +3,7 @@
     Factorization-Machine-based binary optimization for DUV AR multilayers,
     achieving 0.6 % average reflectance on curved CaF₂ lenses
     (collaboration with KRICT).
-  image: /assets/images/research-slides/research1.jpg
+  image: /assets/images/research-slides/research1a.jpg
   tags: [optimization, antireflective, deep-uv]
   link: "/publications/"
 
@@ -12,7 +12,7 @@
     BOCS-DPP framework for pixelated 2D multiband selective thermal emitters,
     developed at the Shiomi lab at the University of Tokyo. Uses a Python
     RCWA (S⁴) backend with high-index dielectric Ge.
-  image: /assets/images/research-slides/research2.jpg
+  image: /assets/images/research-slides/research2a.jpg
   tags: [bayesian-optimization, rcwa, thermal-emitter]
   link: "/research/"
 
@@ -22,6 +22,6 @@
     toward bifacial perovskite PV cells. Outdoor measurements showed a
     17 % average power-generation improvement (collaboration with Hyundai
     Motor Group).
-  image: /assets/images/research-slides/research3.jpg
+  image: /assets/images/research-slides/research3a.jpg
   tags: [photovoltaics, microprism, lighttools]
   link: "/publications/"

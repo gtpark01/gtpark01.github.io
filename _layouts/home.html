@@ -120,7 +120,7 @@ layout: default
             <p class="research-row-short">{{ area.short }}</p>
           </div>
           <div class="research-row-image">
-            <img src="{{ area.image | relative_url }}" alt="" loading="lazy" />
+            <img src="{{ area.images[0] | relative_url }}" alt="" loading="lazy" />
           </div>
           <span class="research-row-arrow" aria-hidden="true">{% include icons.html name="arrow-up-right" %}</span>
         </a>

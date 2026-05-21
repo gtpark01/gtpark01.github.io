@@ -867,7 +867,13 @@ strong { font-weight: 600; color: var(--color-ink); }
   margin-bottom: var(--space-4);
 }
 .research-area-description { color: var(--color-muted); line-height: 1.7; }
+.research-area-figures {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-3);
+}
 .research-area-figure {
+  margin: 0;
   aspect-ratio: 4 / 3;
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -877,7 +883,7 @@ strong { font-weight: 600; color: var(--color-ink); }
   width: 100%; height: 100%; object-fit: cover;
   transition: transform 1.2s var(--ease-out);
 }
-.research-area:hover .research-area-figure img { transform: scale(1.05); }
+.research-area:hover .research-area-figure img { transform: scale(1.04); }
 
 .research-collab { margin-top: var(--space-10); }
 .research-collab-card {
@@ -1213,33 +1219,8 @@ strong { font-weight: 600; color: var(--color-ink); }
   font-weight: 500;
   margin-bottom: var(--space-2);
 }
-.timeline-org {
-  color: var(--color-ink-soft);
-  font-size: 0.95rem;
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  flex-wrap: wrap;
-}
-.timeline-org > span { color: var(--color-ink-soft); }
-.timeline-org em { color: var(--color-muted); font-style: normal; }
-/* Every institution logo occupies the same fixed box. object-fit:contain
-   centers the mark inside while preserving aspect ratio — so square shields,
-   wide wordmarks, and everything in between read at the same visual size.
-   Logos are pre-trimmed (transparent margins removed) so they fill the box. */
-.timeline-logo {
-  width: 84px;
-  height: 56px;
-  object-fit: contain;
-  object-position: center;
-  display: inline-block;
-  flex-shrink: 0;
-  border-radius: 6px;
-  /* Theme-adaptive backdrop: subtle in light mode, blends in dark mode */
-  background: var(--color-surface-2);
-  padding: 6px 10px;
-  border: 1px solid var(--color-line);
-}
+.timeline-org { color: var(--color-ink-soft); font-size: 0.95rem; }
+.timeline-org span { color: var(--color-muted); }
 .timeline-meta { color: var(--color-muted); font-size: 0.9rem; margin-top: var(--space-2); }
 .timeline-note { color: var(--color-muted); font-size: 0.95rem; margin-top: var(--space-2); line-height: 1.6; }
 .timeline-bullets { list-style: none; margin-top: var(--space-3); display: flex; flex-direction: column; gap: var(--space-2); }

@@ -30,8 +30,12 @@ slug: research
         <p class="research-area-short">{{ area.short }}</p>
         <p class="research-area-description">{{ area.description }}</p>
       </div>
-      <div class="research-area-figure">
-        <img src="{{ area.image | relative_url }}" alt="" loading="lazy" />
+      <div class="research-area-figures">
+        {% for img in area.images %}
+        <figure class="research-area-figure">
+          <img src="{{ img | relative_url }}" alt="" loading="lazy" />
+        </figure>
+        {% endfor %}
       </div>
     </div>
   </article>

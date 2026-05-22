@@ -12,7 +12,7 @@ slug: about
 
 <div class="about-grid">
   <div class="about-portrait" data-reveal>
-    <img src="{{ '/assets/images/hero.jpg' | relative_url }}" alt="Portrait of Geon-Tae Park" />
+    <img src="{{ '/assets/images/portrait.jpg' | relative_url }}" alt="Portrait of Geon-Tae Park" />
     <div class="about-portrait-caption">
       <p>Geon-Tae Park</p>
       <p>Ann Arbor, MI</p>

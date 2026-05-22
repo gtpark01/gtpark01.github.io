@@ -49,7 +49,7 @@ The `slug` front-matter value drives `<body class="page page--{slug}">` so any p
 ### Assets
 - `assets/css/main.css` — single stylesheet, organized in 22 numbered sections. Uses CSS custom properties for the design system (tokens at the top under `:root` and `[data-theme="dark"]`). Modern CSS only (`color-mix`, `clamp`, `aspect-ratio`); do not add Sass.
 - `assets/js/main.js` — vanilla JS. Sections inside: reveal animations (IntersectionObserver), header behavior, theme toggle, mobile menu, scroll progress, cursor glow, hero rotator, hero tilt, publications filter.
-- `assets/images/hero.jpg` — hero portrait. **Replaceable** — keep dimensions roughly portrait (4:5).
+- `assets/images/portrait.jpg` — hero portrait. **Replaceable** — keep dimensions roughly portrait (4:5).
 - `assets/images/research-slides/research[1-3].jpg` — research area images. **Replaceable**.
 - `papers/*.pdf` — published papers. **Filenames are stable; do not rename.** Referenced from `_data/publications.yml`.
 
@@ -71,7 +71,7 @@ The `slug` front-matter value drives `<body class="page page--{slug}">` so any p
 | Add a new page | Create `<slug>.md` with `layout: page`, set `title`/`permalink`/`slug` |
 | Change site colors | `:root` tokens in `main.css` |
 | Update rotating hero keywords | `keywords` array in `assets/js/main.js` |
-| Replace hero portrait | drop into `assets/images/hero.jpg` |
+| Replace hero portrait | drop into `assets/images/portrait.jpg` |
 
 ## Conventions
 

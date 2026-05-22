@@ -183,25 +183,25 @@ layout: default
       </p>
     </header>
 
-    <div class="news-col">
-      <ol class="news-list">
-        {% for item in site.data.news limit: 5 %}
-        <li class="news-item" data-reveal>
-          <time class="news-date" datetime="{{ item.date }}">
-            {{ item.date | date: "%b %d, %Y" }}
-          </time>
-          <p class="news-body">{{ item.body | markdownify | remove: '<p>' | remove: '</p>' }}</p>
-          {% if item.tag %}<span class="news-tag news-tag--{{ item.tag }}">{{ item.tag }}</span>{% endif %}
-        </li>
-        {% endfor %}
-      </ol>
+    <ol class="news-list">
+      {% for item in site.data.news limit: 5 %}
+      <li class="news-item" data-reveal>
+        <time class="news-date" datetime="{{ item.date }}">
+          {{ item.date | date: "%b %d, %Y" }}
+        </time>
+        <p class="news-body">{{ item.body | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+        {% if item.tag %}<span class="news-tag news-tag--{{ item.tag }}">{{ item.tag }}</span>{% endif %}
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
 
-      <div class="section-footer section-footer--news" data-reveal>
-        <a href="{{ '/news/' | relative_url }}" class="btn btn--ghost">
-          <span>All news</span>
-          <span class="btn-icon">{% include icons.html name="arrow-right" %}</span>
-        </a>
-      </div>
+  <div class="container">
+    <div class="section-footer" data-reveal>
+      <a href="{{ '/news/' | relative_url }}" class="btn btn--ghost">
+        <span>All news</span>
+        <span class="btn-icon">{% include icons.html name="arrow-right" %}</span>
+      </a>
     </div>
   </div>
 </section>

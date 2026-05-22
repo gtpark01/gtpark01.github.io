@@ -770,8 +770,6 @@ strong { font-weight: 600; color: var(--color-ink); }
   margin-top: var(--space-7);
   display: flex; justify-content: center;
 }
-.section-footer--news { justify-content: flex-start; margin-top: var(--space-6); }
-.news-col { display: flex; flex-direction: column; }
 
 
 /* ─────────────────────────── 12 · Research ─────────────────────────── */

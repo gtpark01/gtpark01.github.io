@@ -65,8 +65,8 @@ layout: default
     <div class="intro-body">
       <p class="intro-text">
         PhD student in <strong>Electrical and Computer Engineering</strong>
-        at the <strong>University of Michigan, Ann Arbor</strong>. Previously
-        at the <strong>University of Tokyo</strong> and
+        at the <strong>University of Michigan, Ann Arbor</strong>.
+        Previously at the <strong>University of Tokyo</strong> and
         <strong>Kyung Hee University</strong>, working on machine-learning-driven
         design of antireflective coatings, microprism films for bifacial
         photovoltaics, and pixelated thermal emitters.
@@ -89,7 +89,7 @@ layout: default
       </h2>
       <p class="section-lede">
         How can we let computation invent — and explain — the photonic
-        structures that energy applications demand?
+        structures that diverse applications demand?
       </p>
     </header>
 
@@ -171,7 +171,7 @@ layout: default
 </section>
 
 <!-- ───────────────────────── NEWS / TIMELINE ───────────────────────── -->
-<section class="section section--news">
+<section class="section section--news" data-section="/news/">
   <div class="container news-grid">
     <header class="section-header section-header--side" data-reveal>
       <p class="section-eyebrow">— Latest</p>
@@ -183,17 +183,26 @@ layout: default
       </p>
     </header>
 
-    <ol class="news-list">
-      {% for item in site.data.news limit: 5 %}
-      <li class="news-item" data-reveal>
-        <time class="news-date" datetime="{{ item.date }}">
-          {{ item.date | date: "%b %d, %Y" }}
-        </time>
-        <p class="news-body">{{ item.body | markdownify | remove: '<p>' | remove: '</p>' }}</p>
-        {% if item.tag %}<span class="news-tag news-tag--{{ item.tag }}">{{ item.tag }}</span>{% endif %}
-      </li>
-      {% endfor %}
-    </ol>
+    <div class="news-col">
+      <ol class="news-list">
+        {% for item in site.data.news limit: 5 %}
+        <li class="news-item" data-reveal>
+          <time class="news-date" datetime="{{ item.date }}">
+            {{ item.date | date: "%b %d, %Y" }}
+          </time>
+          <p class="news-body">{{ item.body | markdownify | remove: '<p>' | remove: '</p>' }}</p>
+          {% if item.tag %}<span class="news-tag news-tag--{{ item.tag }}">{{ item.tag }}</span>{% endif %}
+        </li>
+        {% endfor %}
+      </ol>
+
+      <div class="section-footer section-footer--news" data-reveal>
+        <a href="{{ '/news/' | relative_url }}" class="btn btn--ghost">
+          <span>All news</span>
+          <span class="btn-icon">{% include icons.html name="arrow-right" %}</span>
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 

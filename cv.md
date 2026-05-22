@@ -19,7 +19,7 @@ slug: cv
 
 <section class="cv-section">
   <h2 class="cv-section-title">Research interests</h2>
-  <p style="font-size:1.0625rem; line-height:1.65; color:var(--color-ink-soft); max-width:64ch;">
+  <p style="font-size:1.0625rem; line-height:1.65; color:var(--color-ink-soft);">
     Machine-learning-guided inverse design of optical and photonic materials and
     structures for energy, sensing, and cross-disciplinary applications.
   </p>

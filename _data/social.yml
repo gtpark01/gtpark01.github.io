@@ -6,12 +6,12 @@
 
 - name: Google Scholar
   icon: scholar
-  url: "#"
+  url: "https://scholar.google.com/citations?hl=en&user=NG3J-JwAAAAJ"
   label: Google Scholar
 
 - name: ORCID
   icon: orcid
-  url: "#"
+  url: "https://orcid.org/0009-0003-0610-2227"
   label: ORCID
 
 - name: GitHub

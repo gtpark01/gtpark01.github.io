@@ -16,34 +16,7 @@ slug: contact
   <p class="contact-hint">Replies usually within a few days.</p>
 </section>
 
-<section class="contact-grid">
-  <div class="contact-block" data-reveal>
-    <h3>Where I am</h3>
-    <p>
-      Department of Electrical and Computer Engineering<br />
-      University of Michigan, Ann Arbor<br />
-      Ann Arbor, MI, USA
-    </p>
-  </div>
-
-  <div class="contact-block" data-reveal>
-    <h3>Find me elsewhere</h3>
-    <ul class="contact-links">
-      {% for s in site.data.social %}
-      <li>
-        <a href="{{ s.url }}" target="_blank" rel="noopener" class="contact-link">
-          <span class="contact-link-icon">{% include icons.html name=s.icon %}</span>
-          <span class="contact-link-text">
-            <span class="contact-link-name">{{ s.name }}</span>
-            <span class="contact-link-handle">{{ s.label }}</span>
-          </span>
-          <span class="contact-link-arrow">{% include icons.html name="arrow-up-right" %}</span>
-        </a>
-      </li>
-      {% endfor %}
-    </ul>
-  </div>
-
+<section class="contact-grid contact-grid--single">
   <div class="contact-block" data-reveal>
     <h3>Office hours</h3>
     <p>

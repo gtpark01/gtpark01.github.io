@@ -15,9 +15,12 @@
 
   <div class="container footer-grid">
     <div class="footer-col footer-col--brand">
-      <p class="footer-brand-mark">{{ site.short_name }}</p>
       <p class="footer-brand-name">{{ site.title }}</p>
-      <p class="footer-brand-sub">{{ site.tagline }}<br />{{ site.author.affiliation }}</p>
+      <p class="footer-brand-sub">
+        PhD Student in<br />
+        Electrical&nbsp;and&nbsp;Computer&nbsp;Engineering<br />
+        University&nbsp;of&nbsp;Michigan,&nbsp;Ann&nbsp;Arbor
+      </p>
     </div>
 
     <div class="footer-col">
@@ -31,11 +34,12 @@
 
     <div class="footer-col">
       <p class="footer-col-title">Elsewhere</p>
-      <ul class="footer-links">
+      <ul class="footer-links footer-links--social">
         {% for s in site.data.social %}
         <li>
           <a href="{{ s.url }}" target="_blank" rel="noopener">
-            {{ s.label }}
+            <span class="footer-social-icon" aria-hidden="true">{% include icons.html name=s.icon %}</span>
+            <span class="footer-social-label">{{ s.label }}</span>
             <span class="link-arrow" aria-hidden="true">{% include icons.html name="arrow-up-right" %}</span>
           </a>
         </li>
@@ -43,13 +47,6 @@
       </ul>
     </div>
 
-    <div class="footer-col footer-col--colophon">
-      <p class="footer-col-title">Colophon</p>
-      <p class="footer-colophon-text">
-        Set in <em>Fraunces</em> &amp; <em>Inter</em>. Built with Jekyll, hosted on GitHub Pages.
-        Source available on <a href="https://github.com/gtpark01/gtpark01.github.io" target="_blank" rel="noopener">GitHub</a>.
-      </p>
-    </div>
   </div>
 
   <div class="container footer-bottom">

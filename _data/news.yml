@@ -1,13 +1,14 @@
 # Most recent first.
-- date: 2026-08-01
+- date: 2026-08-31
   body: >-
     Beginning **PhD in Electrical and Computer Engineering** at the
     **University of Michigan, Ann Arbor**.
   tag: milestone
 
-- date: 2026-02-01
+- date: 2026-02-28
   body: >-
-    Completed MS in Physics at Kyung Hee University.
+    Completed **MS in Physics** at *Kyung Hee University*
+    (Nano Photonics Lab, Prof. Sun-Kyung Kim).
   tag: milestone
 
 - date: 2026-01-15
@@ -37,8 +38,126 @@
     for Climate Crisis Mitigation."
   tag: publication
 
+- date: 2025-04-30
+  body: >-
+    New paper in *IEEE Journal of Selected Topics in Quantum Electronics*:
+    "Geometric Design for Light Trapping in Bifacial Thin-Film Photovoltaics."
+  tag: publication
+
+- date: 2025-06-01
+  body: >-
+    Finished a semester as **Teaching Assistant** for the Semiconductor and
+    Properties Processing Lab at *Kyung Hee University* — guiding undergraduates
+    through thermal/e-beam evaporation, ellipsometry, AFM, FTIR, RIE, and
+    laser-interference lithography.
+  tag: milestone
+
+- date: 2025-02-20
+  body: >-
+    Presented "Leveraging Binary Optimization for Robust Multilayer Design"
+    at the **Winter Academic Conference**, Busan, Korea.
+  tag: talk
+
 - date: 2025-02-15
   body: >-
     Awarded the **Outstanding Graduate Scholarship** at Kyung Hee University
     for the second consecutive year.
   tag: award
+
+- date: 2024-12-20
+  body: >-
+    New paper in *Current Optics and Photonics*: "Binary-Optimization-Based
+    Multilayers and Their Practical Applications."
+  tag: publication
+
+- date: 2024-10-15
+  body: >-
+    New paper in *Nanophotonics*: "Ultrathin Ge-YF₃ Antireflective Coating with
+    0.5 % Reflectivity on High-Index Substrate for Long-Wavelength Infrared
+    Cameras."
+  tag: publication
+
+- date: 2024-07-20
+  body: >-
+    Presented "Conformal Antireflective Coatings for High-Numerical-Aperture
+    Lenses" at the **Optics and Photonics Congress**, Jeju, Korea.
+  tag: talk
+
+- date: 2024-06-25
+  body: >-
+    New paper in *Advanced Optical Materials*: "Conformal Antireflective
+    Multilayers for High-Numerical-Aperture Deep-Ultraviolet Lenses."
+  tag: publication
+
+- date: 2024-04-15
+  body: >-
+    Co-authored talk "Broadband Wide-Angle Antireflective Coatings for
+    Long-Wave Infrared Cameras" presented at **PIERS**, Chengdu, China.
+  tag: talk
+
+- date: 2024-03-02
+  body: >-
+    Began **MS in Physics** at *Kyung Hee University* — joined the Nano
+    Photonics Lab full time under Prof. Sun-Kyung Kim.
+  tag: milestone
+
+- date: 2024-02-25
+  body: >-
+    Completed **BS in Applied Physics** at *Kyung Hee University*.
+  tag: milestone
+
+- date: 2024-02-15
+  body: >-
+    Awarded the **Outstanding Graduate Scholarship** at Kyung Hee University —
+    full-tuition master's scholarship for top-performing bachelor's graduates.
+  tag: award
+
+- date: 2023-09-15
+  body: >-
+    Received the **Academic Excellence Award and Scholarship** at Kyung Hee
+    University for the second consecutive year.
+  tag: award
+
+- date: 2023-08-20
+  body: >-
+    Presented "Evaluation of Wide-Angle Antireflective Multilayers with Varying
+    Refractive Index Contrast" at the **Optics and Photonics Congress**, Jeju,
+    Korea.
+  tag: talk
+
+- date: 2023-07-10
+  body: >-
+    Selected for the **Overseas Academic Program** (Capstone Design) at
+    *Saarland University*, Saarbrücken, Germany — and awarded the supporting
+    scholarship from Kyung Hee University.
+  tag: award
+
+- date: 2023-02-20
+  body: >-
+    Received the **Excellent Graduation Poster Award** at Kyung Hee University.
+  tag: award
+
+- date: 2023-01-15
+  body: >-
+    Joined the **Nano Photonics Lab** at *Kyung Hee University* (Prof.
+    Sun-Kyung Kim) as a research assistant — beginning work on
+    machine-learning-guided antireflective coating and microprism design.
+  tag: milestone
+
+- date: 2022-09-15
+  body: >-
+    Received the **Academic Excellence Award and Scholarship** at Kyung Hee
+    University for the second consecutive year.
+  tag: award
+
+- date: 2022-07-01
+  body: >-
+    Joined the **Center for Quantum Information** at the *Korea Institute of
+    Science & Technology* (Dr. Hyang-Tag Lim) as a research intern — working on
+    entangled photon pairs and Hong-Ou-Mandel interference.
+  tag: milestone
+
+- date: 2018-03-02
+  body: >-
+    Began **BS in Applied Physics** at *Kyung Hee University*.
+  tag: milestone

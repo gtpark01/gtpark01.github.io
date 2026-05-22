@@ -125,17 +125,8 @@ slug: about
         <img src="{{ '/assets/images/interests/climate-optics.jpg' | relative_url }}" alt="" loading="lazy" />
       </div>
       <div class="interest-card-body">
-        <h4>Climate-mitigating optics</h4>
+        <h4>Energy-saving optics</h4>
         <p>Radiative cooling, selective emitters, and photovoltaic-enabling films.</p>
-      </div>
-    </article>
-    <article class="interest-card" data-reveal>
-      <div class="interest-card-image">
-        <img src="{{ '/assets/images/interests/quantum-optics.jpg' | relative_url }}" alt="" loading="lazy" />
-      </div>
-      <div class="interest-card-body">
-        <h4>Quantum optics</h4>
-        <p>Where I started — entangled photon pairs and Hong-Ou-Mandel interference.</p>
       </div>
     </article>
   </div>

@@ -170,6 +170,20 @@
     });
   }
 
+  /* ───────────── Hero video playback rate ───────────── */
+  // Slow the background loop so motion feels atmospheric, not frantic.
+  const heroVideo = document.querySelector('.hero-bg-video');
+  if (heroVideo) {
+    heroVideo.playbackRate = 0.5;
+    // Some browsers reset playbackRate after metadata loads — re-apply.
+    heroVideo.addEventListener('loadedmetadata', () => {
+      heroVideo.playbackRate = 0.5;
+    });
+    heroVideo.addEventListener('play', () => {
+      heroVideo.playbackRate = 0.5;
+    });
+  }
+
   /* ───────────── Active-section nav indicator (homepage only) ───────────── */
   // Watch sections on the home page that map to nav links via data-section,
   // and toggle .is-active on the matching nav link as you scroll.

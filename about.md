@@ -22,13 +22,13 @@ slug: about
   <div class="about-bio prose" data-reveal>
     <h2>Bio</h2>
     <p>
-      I'm a Ph.D. student in Electrical and Computer Engineering at the
-      <strong>University of Michigan, Ann Arbor</strong>. I earned my B.S. in
-      Applied Physics and M.S. in Physics from <strong>Kyung Hee University</strong>,
-      where I worked in Prof. Sun-Kyung Kim's Nano Photonics Lab on
-      machine-learning-driven inverse design of optical coatings — collaborating
-      with KRICT on deep-UV multilayers and with Hyundai Motor Group on
-      microprism films for bifacial photovoltaics.
+      I'm a PhD student in Electrical and Computer Engineering at the
+      <strong>University of Michigan, Ann Arbor</strong>. I earned my BS in
+      Applied Physics and MS in Physics from <strong>Kyung Hee University</strong>,
+      where I worked in the Nano Photonics Lab on machine-learning-driven
+      inverse design of optical coatings — collaborating with KRICT on deep-UV
+      multilayers and with Hyundai Motor Group on microprism films for
+      bifacial photovoltaics.
     </p>
     <p>
       Most recently, I was a visiting researcher in Prof. Junichiro Shiomi's
@@ -102,21 +102,41 @@ slug: about
   </header>
 
   <div class="interest-grid">
-    <div class="interest-card" data-reveal>
-      <h4>Inverse design</h4>
-      <p>Reframing photonic engineering as a search problem over discrete material choices.</p>
-    </div>
-    <div class="interest-card" data-reveal>
-      <h4>Interpretable ML</h4>
-      <p>Surrogates that are fast <em>and</em> give back design rules — not just answers.</p>
-    </div>
-    <div class="interest-card" data-reveal>
-      <h4>Climate-mitigating optics</h4>
-      <p>Radiative cooling, selective emitters, and photovoltaic-enabling films.</p>
-    </div>
-    <div class="interest-card" data-reveal>
-      <h4>Quantum optics</h4>
-      <p>Where I started — entangled photon pairs and Hong-Ou-Mandel interference.</p>
-    </div>
+    <article class="interest-card" data-reveal>
+      <div class="interest-card-image">
+        <img src="{{ '/assets/images/interests/inverse-design.jpg' | relative_url }}" alt="" loading="lazy" />
+      </div>
+      <div class="interest-card-body">
+        <h4>Inverse design</h4>
+        <p>Reframing photonic engineering as a search problem over discrete material choices.</p>
+      </div>
+    </article>
+    <article class="interest-card" data-reveal>
+      <div class="interest-card-image">
+        <img src="{{ '/assets/images/interests/interpretable-ml.jpg' | relative_url }}" alt="" loading="lazy" />
+      </div>
+      <div class="interest-card-body">
+        <h4>Interpretable ML</h4>
+        <p>Surrogates that are fast <em>and</em> give back design rules — not just answers.</p>
+      </div>
+    </article>
+    <article class="interest-card" data-reveal>
+      <div class="interest-card-image">
+        <img src="{{ '/assets/images/interests/climate-optics.jpg' | relative_url }}" alt="" loading="lazy" />
+      </div>
+      <div class="interest-card-body">
+        <h4>Climate-mitigating optics</h4>
+        <p>Radiative cooling, selective emitters, and photovoltaic-enabling films.</p>
+      </div>
+    </article>
+    <article class="interest-card" data-reveal>
+      <div class="interest-card-image">
+        <img src="{{ '/assets/images/interests/quantum-optics.jpg' | relative_url }}" alt="" loading="lazy" />
+      </div>
+      <div class="interest-card-body">
+        <h4>Quantum optics</h4>
+        <p>Where I started — entangled photon pairs and Hong-Ou-Mandel interference.</p>
+      </div>
+    </article>
   </div>
 </section>

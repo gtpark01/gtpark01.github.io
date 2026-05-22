@@ -1,4 +1,17 @@
 - number: "01"
+  title: Machine-Learning-Guided Optimization
+  short: Interpretable surrogates for slow electromagnetic simulators.
+  description: >-
+    Full-wave electromagnetic simulations (FDTD, RCWA) are the workhorse of
+    photonics but expensive at scale. I build interpretable ML models that
+    surrogate these simulators — letting us probe the design space orders of
+    magnitude faster while keeping the physics legible enough to draw design
+    rules from.
+  images:
+    - /assets/images/research-slides/research1a.jpg
+    - /assets/images/research-slides/research1b.jpg
+
+- number: "02"
   title: Inverse Design of Optical Coatings
   short: From a target spectrum to a multilayer stack.
   description: >-
@@ -9,24 +22,11 @@
     Bayesian methods over discrete material choices to find stacks that match
     or exceed continuous graded-index references.
   images:
-    - /assets/images/research-slides/research1a.jpg
-    - /assets/images/research-slides/research1b.jpg
-
-- number: "02"
-  title: Machine-Learning-Guided Optimization
-  short: Interpretable surrogates for slow electromagnetic simulators.
-  description: >-
-    Full-wave electromagnetic simulations (FDTD, RCWA) are the workhorse of
-    photonics but expensive at scale. I build interpretable ML models that
-    surrogate these simulators — letting us probe the design space orders of
-    magnitude faster while keeping the physics legible enough to draw design
-    rules from.
-  images:
     - /assets/images/research-slides/research2a.jpg
     - /assets/images/research-slides/research2b.jpg
 
 - number: "03"
-  title: Light-Manipulating Structures for Energy & Imaging
+  title: Light-Manipulating Structures for Energy
   short: Multilayers, microprisms, and metasurfaces in the field.
   description: >-
     The optimization is only as valuable as the device it enables. Past work

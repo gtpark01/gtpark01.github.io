@@ -1,13 +1,4 @@
 - role: Research Assistant
-  org: "Thermal Energy Engineering Lab, The University of Tokyo"
-  period: "Sept. 2025 — Nov. 2025"
-  advisor: "Prof. Junichiro Shiomi"
-  project: "Machine learning-based thermal emitter design"
-  bullets:
-    - "Developed a Bayesian Optimization of Combinatorial Structures – Determinantal Point Process (BOCS-DPP) framework for pixelated 2D multiband selective thermal emitter design."
-    - "Implemented a Python-based RCWA solver (S⁴) to generate candidate structures and evaluate figures of merit, using high-index dielectric Ge to avoid the convergence issues typical of metallic structures."
-
-- role: Research Assistant
   org: "Nano Photonics Lab, Kyung Hee University"
   period: "Jan. 2023 — Present"
   advisor: "Prof. Sun-Kyung Kim"
@@ -18,15 +9,24 @@
     - "Designed wedge-shaped microprism sheets for thin-film bifacial perovskite PV cells (collab. with Hyundai Motor Group); outdoor tests showed a 17 % average improvement in power generation."
 
 - role: Research Assistant
-  org: "Center for Quantum Information, Korea Institute of Science & Technology"
-  period: "Jul. 2022 — Sept. 2022"
-  advisor: "Dr. Hyang-Tag Lim"
+  org: "Thermal Energy Engineering Lab, The University of Tokyo"
+  period: "Sept. 2025 — Nov. 2025"
+  advisor: "Prof. Junichiro Shiomi"
+  project: "Machine learning-based thermal emitter design"
   bullets:
-    - "Formulated a Sagnac interferometer to generate high-purity entangled photon pairs via type-II spontaneous parametric down-conversion in PPKTP."
-    - "Tuned lens spacing and crystal temperature to achieve 99 % visibility in the Hong-Ou-Mandel dip."
+    - "Developed a Bayesian Optimization of Combinatorial Structures – Determinantal Point Process (BOCS-DPP) framework for pixelated 2D multiband selective thermal emitter design."
+    - "Implemented a Python-based RCWA solver (S⁴) to generate candidate structures and evaluate figures of merit, using high-index dielectric Ge to avoid the convergence issues typical of metallic structures."
 
 - role: Teaching Assistant
   org: "Semiconductor and Properties Processing Lab, Kyung Hee University"
   period: "Mar. 2025 — Jun. 2025"
   bullets:
     - "Guided advanced undergraduates in semiconductor processing techniques: thermal/e-beam evaporation, ellipsometry, AFM, FTIR, RIE, and laser-interference lithography."
+
+- role: Research Assistant
+  org: "Center for Quantum Information, Korea Institute of Science & Technology"
+  period: "Jul. 2022 — Sept. 2022"
+  advisor: "Dr. Hyang-Tag Lim"
+  bullets:
+    - "Formulated a Sagnac interferometer to generate high-purity entangled photon pairs via type-II spontaneous parametric down-conversion in PPKTP."
+    - "Tuned lens spacing and crystal temperature to achieve 99 % visibility in the Hong-Ou-Mandel dip."

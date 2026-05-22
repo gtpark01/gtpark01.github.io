@@ -5,10 +5,16 @@ layout: default
 <!-- ───────────────────────── HERO ───────────────────────── -->
 <section class="hero hero--full" aria-labelledby="hero-heading">
   <div class="hero-bg" aria-hidden="true">
+    {%- comment -%}
+      Cache-bust both the poster and the video with the build timestamp so
+      browsers re-fetch fresh assets on each deploy (avoids serving stale
+      cached video when users navigate back to home from another page).
+    {%- endcomment -%}
+    {% assign asset_v = site.time | date: '%s' %}
     <video class="hero-bg-video"
            autoplay muted loop playsinline preload="auto"
-           poster="{{ '/assets/images/hero-bg.jpg' | relative_url }}">
-      <source src="{{ '/assets/videos/hero-bg.mp4' | relative_url }}" type="video/mp4" />
+           poster="{{ '/assets/images/hero-bg.jpg' | relative_url }}?v={{ asset_v }}">
+      <source src="{{ '/assets/videos/hero-bg.mp4' | relative_url }}?v={{ asset_v }}" type="video/mp4" />
     </video>
     <div class="hero-bg-overlay"></div>
   </div>
@@ -58,14 +64,12 @@ layout: default
     <p class="intro-eyebrow">— Currently</p>
     <div class="intro-body">
       <p class="intro-text">
-        Ph.D. student in <strong>Electrical and Computer Engineering</strong>
-        at the <strong>University of Michigan, Ann Arbor</strong>. Recently:
-        visiting researcher in Prof. Junichiro Shiomi's lab at the
-        <strong>University of Tokyo</strong>, and M.S. in Physics at
-        <strong>Kyung Hee University</strong> under Prof. Sun-Kyung Kim —
-        where I worked on factorization-machine-based optimization of
-        antireflective coatings with KRICT and microprism films for bifacial
-        photovoltaics with Hyundai Motor Group.
+        PhD student in <strong>Electrical and Computer Engineering</strong>
+        at the <strong>University of Michigan, Ann Arbor</strong>. Previously
+        at the <strong>University of Tokyo</strong> and
+        <strong>Kyung Hee University</strong>, working on machine-learning-driven
+        design of antireflective coatings, microprism films for bifacial
+        photovoltaics, and pixelated thermal emitters.
       </p>
       <a href="{{ '/about/' | relative_url }}" class="link-arrow-text">
         More about me {% include icons.html name="arrow-right" %}
@@ -84,8 +88,8 @@ layout: default
         <span class="reveal-line"><span>one underlying question.</span></span>
       </h2>
       <p class="section-lede">
-        How do we design structures whose response — not whose shape — is the
-        starting point of the conversation?
+        How can we let computation invent — and explain — the photonic
+        structures that energy applications demand?
       </p>
     </header>
 

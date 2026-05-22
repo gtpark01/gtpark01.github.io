@@ -328,6 +328,27 @@ strong { font-weight: 600; color: var(--color-ink); }
 [data-theme="dark"] .theme-icon--moon { opacity: 1; transform: rotate(0) scale(1); }
 [data-theme="dark"] .theme-icon--sun { opacity: 0; transform: rotate(90deg) scale(0.7); }
 
+/* On the homepage, while at the top of the page (still over the dark
+   hero video), force nav text to white so it reads against the video.
+   Once scrolled past the hero, the regular themed colors take over. */
+.page--home .site-header:not(.is-scrolled) .nav-link,
+.page--home .site-header:not(.is-scrolled) .brand-name,
+.page--home .site-header:not(.is-scrolled) .brand-sub {
+  color: rgba(255, 255, 255, 0.95);
+}
+.page--home .site-header:not(.is-scrolled) .nav-link:hover { color: #fff; }
+.page--home .site-header:not(.is-scrolled) .nav-link.is-active { color: #fff; }
+.page--home .site-header:not(.is-scrolled) .nav-link.is-active::before { background: #fff; }
+.page--home .site-header:not(.is-scrolled) .icon-btn {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+.page--home .site-header:not(.is-scrolled) .icon-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.page--home .site-header:not(.is-scrolled) .menu-toggle .bar { background: #fff; }
+
 .menu-toggle { display: none; flex-direction: column; gap: 4px; }
 .menu-toggle .bar {
   display: block; width: 18px; height: 2px;
@@ -701,7 +722,7 @@ strong { font-weight: 600; color: var(--color-ink); }
   font-weight: 400;
   color: var(--color-ink);
   letter-spacing: -0.018em;
-  max-width: 60ch;
+  /* full container width — matches section width */
 }
 .intro-text strong { font-weight: 500; color: var(--color-ink); }
 
@@ -722,7 +743,7 @@ strong { font-weight: 600; color: var(--color-ink); }
 .section-header {
   display: flex; flex-direction: column; gap: var(--space-4);
   margin-bottom: var(--space-8);
-  max-width: 60ch;
+  /* full container width — title + lede span the layout */
 }
 .section-header--side { max-width: 32ch; }
 .section-eyebrow { display: inline-block; }
@@ -741,7 +762,7 @@ strong { font-weight: 600; color: var(--color-ink); }
 .section-lede {
   color: var(--color-muted);
   font-size: 1.05rem;
-  max-width: 50ch;
+  /* full container width — matches title width above it */
 }
 .section-footer {
   margin-top: var(--space-7);
@@ -1215,18 +1236,41 @@ strong { font-weight: 600; color: var(--color-ink); }
 .interest-card {
   background: var(--color-surface);
   border: 1px solid var(--color-line);
-  padding: var(--space-5);
   border-radius: var(--radius-md);
-  transition: transform var(--dur) var(--ease-out), border-color var(--dur) var(--ease-out);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 420px;
+  transition: transform var(--dur) var(--ease-out), border-color var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out);
 }
-.interest-card:hover { transform: translateY(-4px); border-color: var(--color-line-strong); }
+.interest-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-line-strong);
+  box-shadow: var(--shadow-md);
+}
+.interest-card-image {
+  flex: 0 0 50%;
+  background: var(--color-surface-2);
+  overflow: hidden;
+}
+.interest-card-image img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 1s var(--ease-out);
+}
+.interest-card:hover .interest-card-image img { transform: scale(1.04); }
+.interest-card-body {
+  padding: var(--space-5);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
 .interest-card h4 {
-  font-family: var(--font-serif);
   font-size: 1.25rem;
-  margin-bottom: var(--space-2);
   font-weight: 500;
+  letter-spacing: -0.015em;
 }
-.interest-card p { color: var(--color-muted); font-size: 0.95rem; }
+.interest-card p { color: var(--color-muted); font-size: 0.95rem; line-height: 1.55; }
 
 
 /* ─────────────────────────── 17 · CV ─────────────────────────── */
@@ -1435,7 +1479,7 @@ strong { font-weight: 600; color: var(--color-ink); }
 /* CV title — extra room between "Curriculum" and "Vitae" */
 .page--cv .page-title .reveal-word + .reveal-word { margin-left: 0.55em; }
 .page-lede {
-  max-width: 56ch;
+  /* full container width — matches the title block above it */
   color: var(--color-ink-soft);
   font-size: clamp(1.1rem, 1.6vw, 1.3rem);
   line-height: 1.55;

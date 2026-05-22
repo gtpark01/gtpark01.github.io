@@ -1,9 +1,13 @@
 # Most recent first.
+- date: 2026-08-01
+  body: >-
+    Beginning **PhD in Electrical and Computer Engineering** at the
+    **University of Michigan, Ann Arbor**.
+  tag: milestone
+
 - date: 2026-02-01
   body: >-
-    Completed M.S. in Physics at Kyung Hee University. Heading to
-    *University of Michigan, Ann Arbor* for Ph.D. in Electrical and Computer
-    Engineering.
+    Completed MS in Physics at Kyung Hee University.
   tag: milestone
 
 - date: 2026-01-15

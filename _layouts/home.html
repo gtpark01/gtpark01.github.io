@@ -3,67 +3,47 @@ layout: default
 ---
 
 <!-- ───────────────────────── HERO ───────────────────────── -->
-<section class="hero" aria-labelledby="hero-heading">
+<section class="hero hero--full" aria-labelledby="hero-heading">
   <div class="hero-bg" aria-hidden="true">
-    <div class="hero-grain"></div>
-    <div class="hero-orb hero-orb--a"></div>
-    <div class="hero-orb hero-orb--b"></div>
+    <img class="hero-bg-image" src="{{ '/assets/images/hero-bg.jpg' | relative_url }}" alt="" />
+    <div class="hero-bg-overlay"></div>
   </div>
 
-  <div class="container hero-grid">
-    <div class="hero-left">
-      <p class="hero-eyebrow" data-reveal>
+  <div class="container hero-content">
+    <div class="hero-center" data-reveal>
+      <p class="hero-eyebrow">
         <span class="hero-eyebrow-dot"></span>
         <span class="hero-eyebrow-text">PhD Researcher · Ann Arbor, MI</span>
       </p>
 
       <h1 id="hero-heading" class="hero-title">
-        <span class="reveal-line"><span>Geon-Tae</span></span>
-        <span class="reveal-line"><span>Park</span></span>
+        <span class="reveal-line"><span>Geon-Tae Park</span></span>
       </h1>
 
-      <div class="hero-meta" data-reveal>
+      <div class="hero-meta">
         <p class="hero-role">PhD Researcher, Electrical and Computer Engineering</p>
         <p class="hero-aff">University of Michigan, Ann Arbor</p>
       </div>
+    </div>
 
-      <p class="hero-lede" data-reveal>
-        I design optical and photonic structures using machine learning and
-        numerical optimization — for energy, sensing, and imaging. Currently
-        studying photonic inverse design as a Ph.D. student at U-Michigan,
-        previously at Kyung Hee University and the University of Tokyo.
-      </p>
-
-      <div class="hero-buttons" data-reveal>
+    <div class="hero-bottom" data-reveal>
+      <div class="hero-buttons">
         <a href="{{ '/research/' | relative_url }}" class="btn btn--primary">
           <span>Explore research</span>
           <span class="btn-icon">{% include icons.html name="arrow-right" %}</span>
         </a>
-        <a href="{{ '/cv/' | relative_url }}" class="btn btn--ghost">
+        <a href="{{ '/cv/' | relative_url }}" class="btn btn--ghost-light">
           <span>View CV</span>
         </a>
       </div>
 
-      <div class="hero-social" data-reveal>
+      <div class="hero-social">
         {% for s in site.data.social %}
         <a href="{{ s.url }}" class="hero-social-link" aria-label="{{ s.name }}" target="_blank" rel="noopener">
           {% include icons.html name=s.icon %}
         </a>
         {% endfor %}
       </div>
-    </div>
-
-    <div class="hero-right" data-reveal>
-      <figure class="hero-figure" data-tilt>
-        <div class="hero-figure-frame">
-          <img src="{{ '/assets/images/hero.jpg' | relative_url }}" alt="Portrait of Geon-Tae Park" loading="eager" />
-          <div class="hero-figure-overlay" aria-hidden="true"></div>
-        </div>
-        <figcaption class="hero-figure-meta">
-          <span class="hero-figure-meta-num">2025—</span>
-          <span class="hero-figure-meta-text">Ann Arbor, Michigan</span>
-        </figcaption>
-      </figure>
     </div>
   </div>
 

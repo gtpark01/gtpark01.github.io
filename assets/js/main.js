@@ -149,23 +149,6 @@
     });
   }
 
-  /* ───────────── Hero figure tilt ───────────── */
-  const tiltEl = document.querySelector('[data-tilt]');
-  if (tiltEl && window.matchMedia('(hover: hover) and (pointer: fine)').matches && !reduceMotion) {
-    const frame = tiltEl.querySelector('.hero-figure-frame');
-    if (frame) {
-      const max = 6; // degrees
-      tiltEl.addEventListener('mousemove', (e) => {
-        const r = tiltEl.getBoundingClientRect();
-        const x = (e.clientX - r.left) / r.width - 0.5;
-        const y = (e.clientY - r.top) / r.height - 0.5;
-        frame.style.transform = `rotate(${-2 + x * max}deg) rotateY(${x * max}deg) rotateX(${-y * max}deg)`;
-      });
-      tiltEl.addEventListener('mouseleave', () => {
-        frame.style.transform = '';
-      });
-    }
-  }
 
   /* ───────────── Publications page filter ───────────── */
   const filterBtns = document.querySelectorAll('.pub-filter-btn');

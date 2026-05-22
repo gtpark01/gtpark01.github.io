@@ -14,7 +14,7 @@ slug: cv
     <span>Download CV (PDF)</span>
     <span class="btn-icon">{% include icons.html name="arrow-down" %}</span>
   </a>
-  <p class="cv-updated">Last updated: <time datetime="2025-03">March 2025</time></p>
+  <p class="cv-updated">Last updated: <time datetime="2026-05">May 2026</time></p>
 </div>
 
 <section class="cv-section">
@@ -65,15 +65,15 @@ slug: cv
 <section class="cv-section">
   <h2 class="cv-section-title">Publications</h2>
   <ol class="cv-pub-list">
-    {% assign sorted = site.data.publications | sort: 'year' | reverse %}
-    {% for p in sorted %}
+    {% for p in site.data.publications %}
     <li class="cv-pub" data-reveal>
       <p class="cv-pub-title">{{ p.title }}</p>
       <p class="cv-pub-meta">
         {{ p.authors }} ·
-        <em>{{ p.venue }}</em>{% if p.volume %}, {{ p.volume }}{% endif %}{% if p.pages %}, {{ p.pages }}{% endif %}
+        <em>{{ p.venue }}</em>{% if p.volume %}, {{ p.volume }}{% if p.issue %} ({{ p.issue }}){% endif %}{% endif %}{% if p.pages %}, {{ p.pages }}{% endif %}
         ({{ p.year }}{% if p.status %}, {{ p.status }}{% endif %})
-        {% if p.pdf and p.pdf != "" %} · <a href="{{ p.pdf | relative_url }}" target="_blank" rel="noopener">PDF</a>{% endif %}
+        {% if p.doi %} · <a href="{{ p.doi }}" target="_blank" rel="noopener">DOI</a>{% endif %}
+        {% if p.pdf and p.pdf != "" %} · <a href="{{ p.pdf }}" target="_blank" rel="noopener">PDF</a>{% endif %}
       </p>
     </li>
     {% endfor %}

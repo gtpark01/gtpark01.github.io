@@ -988,13 +988,6 @@ strong { font-weight: 600; color: var(--color-ink); }
 .pub-card.is-hidden { display: none; }
 .pub-card-meta { display: flex; flex-direction: column; gap: var(--space-2); align-items: flex-start; }
 .pub-card-year { font-family: var(--font-mono); font-size: 0.85rem; color: var(--color-muted); }
-.pub-card-flag {
-  font-family: var(--font-mono);
-  font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.12em;
-  padding: 2px 8px;
-  background: var(--color-highlight); color: #14141a;
-  border-radius: var(--radius-pill);
-}
 .pub-card-title {
   font-family: var(--font-serif);
   font-size: clamp(1.25rem, 2.4vw, 1.75rem);

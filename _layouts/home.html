@@ -156,13 +156,21 @@ layout: default
         <div class="pub-row-body">
           <h3 class="pub-row-title">{{ pub.title }}</h3>
           <p class="pub-row-authors">{{ pub.authors }}</p>
-          <p class="pub-row-venue"><em>{{ pub.venue }}</em></p>
+          <p class="pub-row-venue">
+            <em>{{ pub.venue }}</em>{% if pub.volume %}, {{ pub.volume }}{% if pub.issue %} ({{ pub.issue }}){% endif %}{% endif %}{% if pub.pages %}, {{ pub.pages }}{% endif %}
+          </p>
         </div>
         <div class="pub-row-actions">
-          {% if pub.pdf %}
-          <a href="{{ pub.pdf | relative_url }}" class="pub-action" target="_blank" rel="noopener" aria-label="PDF">
+          {% if pub.pdf and pub.pdf != "" %}
+          <a href="{{ pub.pdf }}" class="pub-action" target="_blank" rel="noopener" aria-label="PDF">
             {% include icons.html name="pdf" %}
             <span>PDF</span>
+          </a>
+          {% endif %}
+          {% if pub.doi %}
+          <a href="{{ pub.doi }}" class="pub-action" target="_blank" rel="noopener" aria-label="DOI">
+            {% include icons.html name="doi" %}
+            <span>DOI</span>
           </a>
           {% endif %}
         </div>

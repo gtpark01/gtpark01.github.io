@@ -24,18 +24,18 @@ slug: publications
 </div>
 
 <ol class="pub-list pub-list--full" data-pub-list>
-  {% assign sorted_pubs = site.data.publications | sort: 'year' | reverse %}
-  {% for pub in sorted_pubs %}
+  {% for pub in site.data.publications %}
   <li class="pub-card" data-year="{{ pub.year }}" data-tags="{{ pub.tags | join: ',' }}" data-reveal>
     <div class="pub-card-meta">
       <span class="pub-card-year">{{ pub.year }}</span>
-      {% if pub.featured %}<span class="pub-card-flag">Featured</span>{% endif %}
     </div>
 
     <div class="pub-card-main">
       <h3 class="pub-card-title">{{ pub.title }}</h3>
       <p class="pub-card-authors">{{ pub.authors }}</p>
-      <p class="pub-card-venue"><em>{{ pub.venue }}</em></p>
+      <p class="pub-card-venue">
+        <em>{{ pub.venue }}</em>{% if pub.volume %}, <strong>{{ pub.volume }}</strong>{% if pub.issue %} ({{ pub.issue }}){% endif %}{% endif %}{% if pub.pages %}, {{ pub.pages }}{% endif %}
+      </p>
 
       {% if pub.abstract %}
       <details class="pub-card-abstract">
@@ -52,8 +52,8 @@ slug: publications
     </div>
 
     <div class="pub-card-actions">
-      {% if pub.pdf %}
-      <a href="{{ pub.pdf | relative_url }}" class="pub-action" target="_blank" rel="noopener">
+      {% if pub.pdf and pub.pdf != "" %}
+      <a href="{{ pub.pdf }}" class="pub-action" target="_blank" rel="noopener">
         {% include icons.html name="pdf" %}
         <span>PDF</span>
       </a>

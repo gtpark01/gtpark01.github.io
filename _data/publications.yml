@@ -1,5 +1,6 @@
-# Publications, newest first. Add to top when a new paper comes out.
-# Existing locally-hosted PDFs live in /papers/
+# Publications, newest first.
+# pdf: link (typically Google Drive view link); doi: full https://doi.org/ URL.
+# featured: surfaces a paper on the home-page "Selected publications" block.
 
 - title: >-
     Interpretable-Machine-Learning-Enabled Discretized Antireflective Multilayer
@@ -7,9 +8,11 @@
   authors: "G.-T. Park, J. He, E. Lee, S.-K. Kim, R. Hu"
   venue: "Applied Optics"
   year: 2026
-  status: "Accepted"
-  pdf: ""
-  doi: ""
+  volume: "65"
+  issue: "12"
+  pages: "4018–4030"
+  doi: "https://doi.org/10.1364/AO.585906"
+  pdf: "https://drive.google.com/file/d/1fHVGdjahRtQDk77EC1ePyUlYuAGi3xc1/view?usp=drive_link"
   tags: [inverse-design, antireflective, interpretable-ml]
   featured: true
 
@@ -18,9 +21,10 @@
   venue: "Applied Physics Reviews"
   year: 2025
   volume: "12"
+  issue: "3"
   pages: "031332"
-  pdf: ""
-  doi: ""
+  doi: "https://doi.org/10.1063/5.0280852"
+  pdf: "https://drive.google.com/file/d/1Ji7KdMNrWnBTU6VmHy2G50Kxkzbu-M0G/view?usp=drive_link"
   tags: [review, climate, microstructured-coatings]
   featured: true
 
@@ -30,8 +34,8 @@
   year: 2025
   volume: "31"
   pages: "4000107"
-  pdf: /papers/Park2025_IEEE.pdf
-  doi: ""
+  doi: "https://doi.org/10.1109/JSTQE.2025.3564549"
+  pdf: "https://drive.google.com/file/d/1HNpnAHdsxLRPQXI8QCBINFJHwOJDELF2/view?usp=drive_link"
   tags: [photovoltaics, light-trapping, bifacial]
   featured: true
 
@@ -40,9 +44,10 @@
   venue: "Current Optics and Photonics"
   year: 2024
   volume: "8"
+  issue: "6"
   pages: "545–561"
-  pdf: /papers/Park2024_BinaryOptimizationMultilayers.pdf
-  doi: ""
+  doi: "https://doi.org/10.3807/COPP.2024.8.6.545"
+  pdf: "https://drive.google.com/file/d/1M3AKZh8ZgSVWrKeHn3kuB762FqqRFngu/view?usp=drive_link"
   tags: [optimization, multilayers]
   featured: false
 
@@ -53,9 +58,10 @@
   venue: "Advanced Optical Materials"
   year: 2024
   volume: "12"
+  issue: "26"
   pages: "2401040"
-  pdf: /papers/Park2024_AdvancedOpticalMaterials.pdf
-  doi: ""
+  doi: "https://doi.org/10.1002/adom.202401040"
+  pdf: "https://drive.google.com/file/d/1DwDKsO__Uh4DCoOK9f1PMGo9Vx81wF4D/view?usp=drive_link"
   tags: [antireflective, deep-uv, conformal-coatings]
   featured: true
 
@@ -66,8 +72,9 @@
   venue: "Nanophotonics"
   year: 2024
   volume: "13"
+  issue: "21"
   pages: "4067–4078"
-  pdf: /papers/Yu2024_Nanophotonics.pdf
-  doi: ""
+  doi: "https://doi.org/10.1515/nanoph-2024-0360"
+  pdf: "https://drive.google.com/file/d/16Y2483U8r-mvg7y5oH2bknjkVG14oD5P/view?usp=drive_link"
   tags: [antireflective, infrared, nanophotonics]
   featured: false

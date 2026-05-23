@@ -120,12 +120,16 @@
     heroVideo.setAttribute('muted', '');
     heroVideo.playsInline = true;
 
-    heroVideo.addEventListener('playing', () => {
-      heroVideo.classList.add('is-playing');
-    });
-    heroVideo.addEventListener('pause', () => {
-      heroVideo.classList.remove('is-playing');
-    });
+    const markPlaying = () => heroVideo.classList.add('is-playing');
+    const markStopped = () => heroVideo.classList.remove('is-playing');
+    heroVideo.addEventListener('playing', markPlaying);
+    heroVideo.addEventListener('pause', markStopped);
+    /* The script is deferred, so autoplay may have already started and
+       fired its 'playing' event before this listener was attached.
+       Catch that case explicitly and also use the next timeupdate as a
+       belt-and-braces signal that the frame buffer is advancing. */
+    if (!heroVideo.paused && heroVideo.currentTime > 0) markPlaying();
+    heroVideo.addEventListener('timeupdate', markPlaying, { once: true });
 
     const tryPlay = () => {
       const p = heroVideo.play();

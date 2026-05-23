@@ -24,6 +24,13 @@ layout: default
            controlslist="nodownload nofullscreen noremoteplayback noplaybackrate"
            x-webkit-airplay="deny"
            data-hero-video>
+      {%- comment -%}
+        Chrome/Firefox/Edge prefer the WebM/VP9 source — software decode
+        succeeds where some Windows + Intel iGPU combos silently refuse
+        H.264 hardware decode. Safari skips VP9 (no support) and falls
+        through to the MP4, which it plays fine.
+      {%- endcomment -%}
+      <source src="{{ '/assets/videos/hero-bg.webm' | relative_url }}?v={{ asset_v }}" type="video/webm" />
       <source src="{{ '/assets/videos/hero-bg.mp4' | relative_url }}?v={{ asset_v }}" type="video/mp4" />
     </video>
     <div class="hero-bg-overlay"></div>

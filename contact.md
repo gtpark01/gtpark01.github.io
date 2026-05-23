@@ -20,9 +20,9 @@ slug: contact
   <div class="contact-block" data-reveal>
     <h3>Office hours</h3>
     <p>
-      [Placeholder.] If you're a prospective collaborator, fellow student, or
-      just curious about my work, I'm happy to chat — drop me an email and
-      we'll find a time.
+      If you're a prospective collaborator, fellow student, or just curious
+      about my work, I'm happy to chat — drop me an email and we'll find a
+      time.
     </p>
   </div>
 </section>

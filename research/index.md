@@ -10,14 +10,6 @@ lede: >-
 slug: research
 ---
 
-<div class="research-philosophy" data-reveal>
-  <p class="research-philosophy-text">
-    [Placeholder.] A short paragraph about the overarching question that ties
-    my research areas together — why these three directions are facets of a
-    single underlying inquiry.
-  </p>
-</div>
-
 <section class="research-areas">
   {% for area in site.data.research_areas %}
   <article class="research-area" data-reveal>

@@ -546,17 +546,31 @@ strong { font-weight: 600; color: var(--color-ink); }
 
 /* Background video (with poster fallback) + readability overlay */
 .hero-bg { position: absolute; inset: 0; z-index: -1; overflow: hidden; }
-.hero-bg-video,
-.hero-bg-image {
+.hero-bg-poster {
+  position: absolute; inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Subtle slow zoom keeps a tiny bit of motion before the video appears
+     and is the only thing visible if autoplay is refused. */
+  animation: hero-bg-zoom 24s var(--ease-out) infinite alternate;
+}
+.hero-bg-video {
+  position: absolute; inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
   object-position: center;
   display: block;
   pointer-events: none;
+  /* Stay invisible until JS confirms playback has actually started.
+     If the browser refuses autoplay (Safari Low Power, etc.), the
+     <video> never becomes visible and no tap-to-play overlay shows. */
+  opacity: 0;
+  transition: opacity 600ms var(--ease-out);
 }
-/* Suppress every browser's native overlay/PiP/start button so the hero
-   reads as a clean background. Safari and Chromium both render their
-   own UI by default on <video> elements. */
+.hero-bg-video.is-playing { opacity: 1; }
+/* Suppress every browser's native overlay/PiP/start button on the off
+   chance the element becomes visible while paused. */
 .hero-bg-video::-webkit-media-controls,
 .hero-bg-video::-webkit-media-controls-panel,
 .hero-bg-video::-webkit-media-controls-play-button,
@@ -567,17 +581,13 @@ strong { font-weight: 600; color: var(--color-ink); }
   -webkit-appearance: none !important;
   appearance: none !important;
 }
-/* Subtle zoom-in on the still poster only — keeps a tiny bit of motion
-   before/around the video loading. Video itself stays untransformed. */
-.hero-bg-image {
-  animation: hero-bg-zoom 24s var(--ease-out) infinite alternate;
-}
 @keyframes hero-bg-zoom {
   from { transform: scale(1); }
   to   { transform: scale(1.06); }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero-bg-video { display: none; }
+  .hero-bg-poster { animation: none; }
 }
 .hero-bg-overlay {
   position: absolute; inset: 0;

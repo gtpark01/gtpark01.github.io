@@ -7,16 +7,22 @@ layout: default
   <div class="hero-bg" aria-hidden="true">
     {%- comment -%}
       Cache-bust both the poster and the video with the build timestamp so
-      browsers re-fetch fresh assets on each deploy (avoids serving stale
-      cached video when users navigate back to home from another page).
+      browsers re-fetch fresh assets on each deploy.
+
+      The poster is rendered as a CSS background on its own div, NOT as
+      the video's poster attribute. That lets us hide the <video> element
+      entirely until it actually starts playing — preventing Safari (and
+      Chromium in some power-saving modes) from drawing a tap-to-play
+      overlay on top of a stalled video element.
     {%- endcomment -%}
     {% assign asset_v = site.time | date: '%s' %}
+    <div class="hero-bg-poster"
+         style="background-image: url('{{ '/assets/images/hero-bg.jpg' | relative_url }}?v={{ asset_v }}');"></div>
     <video class="hero-bg-video"
            autoplay muted loop playsinline preload="auto"
            disablepictureinpicture disableremoteplayback
            controlslist="nodownload nofullscreen noremoteplayback noplaybackrate"
            x-webkit-airplay="deny"
-           poster="{{ '/assets/images/hero-bg.jpg' | relative_url }}?v={{ asset_v }}"
            data-hero-video>
       <source src="{{ '/assets/videos/hero-bg.mp4' | relative_url }}?v={{ asset_v }}" type="video/mp4" />
     </video>

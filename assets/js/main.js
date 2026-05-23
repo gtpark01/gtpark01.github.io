@@ -109,13 +109,23 @@
   }
 
   /* ───────────── Hero video: ensure autoplay even when the browser
-       blocks it (Windows Chrome power-save, Safari Low Power, etc.) */
+       blocks it (Windows Chrome power-save, Safari Low Power, etc.).
+       The <video> element stays opacity:0 until the `playing` event
+       fires, so if autoplay is refused we just keep showing the poster
+       background — no tap-to-play overlay ever appears. */
   const heroVideo = document.querySelector('[data-hero-video]');
   if (heroVideo && !reduceMotion) {
     heroVideo.muted = true;            /* belt-and-braces — required for autoplay */
     heroVideo.defaultMuted = true;
     heroVideo.setAttribute('muted', '');
     heroVideo.playsInline = true;
+
+    heroVideo.addEventListener('playing', () => {
+      heroVideo.classList.add('is-playing');
+    });
+    heroVideo.addEventListener('pause', () => {
+      heroVideo.classList.remove('is-playing');
+    });
 
     const tryPlay = () => {
       const p = heroVideo.play();

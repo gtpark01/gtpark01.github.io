@@ -552,6 +552,20 @@ strong { font-weight: 600; color: var(--color-ink); }
   object-fit: cover;
   object-position: center;
   display: block;
+  pointer-events: none;
+}
+/* Suppress every browser's native overlay/PiP/start button so the hero
+   reads as a clean background. Safari and Chromium both render their
+   own UI by default on <video> elements. */
+.hero-bg-video::-webkit-media-controls,
+.hero-bg-video::-webkit-media-controls-panel,
+.hero-bg-video::-webkit-media-controls-play-button,
+.hero-bg-video::-webkit-media-controls-overlay-play-button,
+.hero-bg-video::-webkit-media-controls-start-playback-button,
+.hero-bg-video::-internal-media-controls-overlay-cast-button {
+  display: none !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
 }
 /* Subtle zoom-in on the still poster only — keeps a tiny bit of motion
    before/around the video loading. Video itself stays untransformed. */

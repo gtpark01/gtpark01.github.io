@@ -108,6 +108,42 @@
     updateProgress();
   }
 
+  /* ───────────── Hero video: ensure autoplay even when the browser
+       blocks it (Windows Chrome power-save, Safari Low Power, etc.) */
+  const heroVideo = document.querySelector('[data-hero-video]');
+  if (heroVideo && !reduceMotion) {
+    heroVideo.muted = true;            /* belt-and-braces — required for autoplay */
+    heroVideo.defaultMuted = true;
+    heroVideo.setAttribute('muted', '');
+    heroVideo.playsInline = true;
+
+    const tryPlay = () => {
+      const p = heroVideo.play();
+      if (p && typeof p.catch === 'function') {
+        p.catch(() => { /* will retry on user interaction below */ });
+      }
+    };
+
+    /* First attempt — most browsers will accept this. */
+    tryPlay();
+
+    /* Retry on the next user gesture if the first attempt was blocked. */
+    const kick = () => {
+      tryPlay();
+      ['pointerdown', 'touchstart', 'keydown', 'scroll'].forEach((ev) =>
+        window.removeEventListener(ev, kick, { passive: true })
+      );
+    };
+    ['pointerdown', 'touchstart', 'keydown', 'scroll'].forEach((ev) =>
+      window.addEventListener(ev, kick, { passive: true })
+    );
+
+    /* Resume when the tab becomes visible again. */
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') tryPlay();
+    });
+  }
+
   /* ───────────── Theme toggle ───────────── */
   const themeToggle = document.querySelector('[data-theme-toggle]');
   if (themeToggle) {

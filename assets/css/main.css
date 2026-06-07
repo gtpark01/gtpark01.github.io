@@ -544,16 +544,15 @@ strong { font-weight: 600; color: var(--color-ink); }
   color: #fff;
 }
 
-/* Background video (with poster fallback) + readability overlay */
-.hero-bg { position: absolute; inset: 0; z-index: -1; overflow: hidden; }
+/* Background video (with matching static poster) + readability overlay */
+.hero-bg { position: absolute; inset: 0; z-index: -1; overflow: hidden; background: #000; }
 .hero-bg-poster {
   position: absolute; inset: 0;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /* Subtle slow zoom keeps a tiny bit of motion before the video appears
-     and is the only thing visible if autoplay is refused. */
-  animation: hero-bg-zoom 24s var(--ease-out) infinite alternate;
+  /* No zoom — must stay pixel-identical to the video's first frame so
+     the cross-fade is invisible. */
 }
 .hero-bg-video {
   position: absolute; inset: 0;
@@ -566,12 +565,11 @@ strong { font-weight: 600; color: var(--color-ink); }
      If the browser refuses autoplay (Safari Low Power, etc.), the
      <video> never becomes visible and no tap-to-play overlay shows. */
   opacity: 0;
-  transition: opacity 600ms var(--ease-out);
+  transition: opacity 120ms var(--ease-out);
 }
 .hero-bg-video.is-playing { opacity: 1; }
 /* Suppress every browser's native overlay/PiP/start button on the off
-   chance the element becomes visible while paused. Cast button is
-   handled by the disableremoteplayback attribute on the <video>. */
+   chance the element becomes visible while paused. */
 .hero-bg-video::-webkit-media-controls,
 .hero-bg-video::-webkit-media-controls-panel,
 .hero-bg-video::-webkit-media-controls-play-button,
@@ -581,13 +579,8 @@ strong { font-weight: 600; color: var(--color-ink); }
   -webkit-appearance: none !important;
   appearance: none !important;
 }
-@keyframes hero-bg-zoom {
-  from { transform: scale(1); }
-  to   { transform: scale(1.06); }
-}
 @media (prefers-reduced-motion: reduce) {
   .hero-bg-video { display: none; }
-  .hero-bg-poster { animation: none; }
 }
 .hero-bg-overlay {
   position: absolute; inset: 0;

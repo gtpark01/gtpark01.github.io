@@ -115,6 +115,19 @@
        background — no tap-to-play overlay ever appears. */
   const heroVideo = document.querySelector('[data-hero-video]');
   if (heroVideo && !reduceMotion) {
+    /* Pick the source per-browser. Safari (and every iOS browser, since
+       they share WebKit) refuses to autoplay VP9 reliably even with
+       autoplay allowed — but autoplays H.264 instantly. So feed WebKit
+       the MP4 and everyone else the smaller WebM. */
+    const ua = navigator.userAgent;
+    const isWebKitOnly = /WebKit/.test(ua) && !/Chrome|Chromium|Edg|Android/.test(ua);
+    const src = isWebKitOnly ? heroVideo.dataset.srcMp4 : heroVideo.dataset.srcWebm;
+    const source = document.createElement('source');
+    source.src = src;
+    source.type = isWebKitOnly ? 'video/mp4' : 'video/webm; codecs=vp9';
+    heroVideo.appendChild(source);
+    heroVideo.load();
+
     heroVideo.muted = true;            /* belt-and-braces — required for autoplay */
     heroVideo.defaultMuted = true;
     heroVideo.setAttribute('muted', '');
@@ -125,9 +138,7 @@
     heroVideo.addEventListener('playing', markPlaying);
     heroVideo.addEventListener('pause', markStopped);
     /* The script is deferred, so autoplay may have already started and
-       fired its 'playing' event before this listener was attached.
-       Catch that case explicitly and also use the next timeupdate as a
-       belt-and-braces signal that the frame buffer is advancing. */
+       fired its 'playing' event before this listener was attached. */
     if (!heroVideo.paused && heroVideo.currentTime > 0) markPlaying();
     heroVideo.addEventListener('timeupdate', markPlaying, { once: true });
 

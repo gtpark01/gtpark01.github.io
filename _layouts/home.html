@@ -6,33 +6,30 @@ layout: default
 <section class="hero hero--full" aria-labelledby="hero-heading">
   <div class="hero-bg" aria-hidden="true">
     {%- comment -%}
-      Cache-bust both the poster and the video with the build timestamp so
-      browsers re-fetch fresh assets on each deploy.
-
-      The poster is rendered as a CSS background on its own div, NOT as
-      the video's poster attribute. That lets us hide the <video> element
-      entirely until it actually starts playing — preventing Safari (and
-      Chromium in some power-saving modes) from drawing a tap-to-play
-      overlay on top of a stalled video element.
+      The poster is rendered as a CSS background on its own div behind
+      the <video>, NOT as the video's poster attribute. The <video>
+      stays opacity:0 until the `playing` event fires, so Safari never
+      draws a tap-to-play overlay on top of it. The poster dims match
+      the video exactly so the cross-fade is invisible.
     {%- endcomment -%}
     {% assign asset_v = site.time | date: '%s' %}
     <div class="hero-bg-poster"
          style="background-image: url('{{ '/assets/images/hero-bg.jpg' | relative_url }}?v={{ asset_v }}');"></div>
+    {%- comment -%}
+      No <source> here — JS picks the right file based on the browser:
+        • WebKit (Safari macOS/iOS, all iOS browsers) → MP4 because
+          Safari refuses to autoplay VP9 even with autoplay allowed.
+        • Everyone else (Chrome/Firefox/Edge) → WebM, smaller and
+          works around the Windows + Intel iGPU H.264 hardware-decode bug.
+    {%- endcomment -%}
     <video class="hero-bg-video"
            autoplay muted loop playsinline preload="auto"
            disablepictureinpicture disableremoteplayback
            controlslist="nodownload nofullscreen noremoteplayback noplaybackrate"
            x-webkit-airplay="deny"
-           data-hero-video>
-      {%- comment -%}
-        Chrome/Firefox/Edge prefer the WebM/VP9 source — software decode
-        succeeds where some Windows + Intel iGPU combos silently refuse
-        H.264 hardware decode (no error, `playing` event never fires).
-        Safari skips VP9 (no support) and falls through to the MP4.
-      {%- endcomment -%}
-      <source src="{{ '/assets/videos/hero-bg.webm' | relative_url }}?v={{ asset_v }}" type="video/webm" />
-      <source src="{{ '/assets/videos/hero-bg.mp4' | relative_url }}?v={{ asset_v }}" type="video/mp4" />
-    </video>
+           data-hero-video
+           data-src-webm="{{ '/assets/videos/hero-bg.webm' | relative_url }}?v={{ asset_v }}"
+           data-src-mp4="{{ '/assets/videos/hero-bg.mp4' | relative_url }}?v={{ asset_v }}"></video>
     <div class="hero-bg-overlay"></div>
   </div>
 

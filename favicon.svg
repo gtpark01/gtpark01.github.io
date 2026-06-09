@@ -1,10 +1,7 @@
-<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-  <rect width="32" height="32" rx="7" fill="#0c0c10"/>
-  <path d="M22 12.5 A 7 7 0 1 0 22 19.5 L 22 16 L 17 16"
-        fill="none"
-        stroke="#ecebe4"
-        stroke-width="2.6"
-        stroke-linecap="round"
-        stroke-linejoin="round"/>
-  <circle cx="26" cy="9" r="1.6" fill="#ecebe4"/>
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <rect width="32" height="32" rx="7" fill="#00274c"/>
+  <text x="16" y="17.5" text-anchor="middle" dominant-baseline="central"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-weight="700" font-size="18" letter-spacing="-0.5"
+        fill="#ffcb05">GT.</text>
 </svg>

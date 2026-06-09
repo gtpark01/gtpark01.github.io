@@ -4,7 +4,7 @@ title: Curriculum Vitae
 permalink: /cv/
 eyebrow: A long-form résumé
 lede: >-
-  Education, experience, publications, talks, awards, and skills — the full
+  Education, experience, publications, talks, awards, and skills, the full
   record. A printable PDF is available below.
 slug: cv
 ---
@@ -100,7 +100,7 @@ slug: cv
   <ul class="cv-simple-list">
     {% for a in site.data.awards %}
     <li data-reveal>
-      <strong>{{ a.year }}</strong> — {{ a.title }}, {{ a.org }}
+      <strong>{{ a.year }}</strong>, {{ a.title }}, {{ a.org }}
       {% if a.note %}<br /><span style="color:var(--color-muted); font-size:0.9rem;">{{ a.note }}</span>{% endif %}
     </li>
     {% endfor %}
@@ -133,7 +133,7 @@ slug: cv
   <h2 class="cv-section-title">Extracurricular</h2>
   <ul class="cv-simple-list">
     <li data-reveal>
-      <strong>Jul. 2023</strong> — Overseas Academic Program (Capstone Design), <em>Saarland University</em>, Saarbrücken, Germany.
+      <strong>Jul. 2023</strong>, Overseas Academic Program (Capstone Design), <em>Saarland University</em>, Saarbrücken, Germany.
       <br /><span style="color:var(--color-muted); font-size:0.9rem;">
         Conducted a campus-wide survey on food storage and developed an AI-driven solution that scans ingredients, estimates expiration dates, and alerts users to reduce waste.
       </span>

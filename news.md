@@ -4,7 +4,7 @@ title: News & Updates
 permalink: /news/
 eyebrow: Latest
 lede: >-
-  Talks, papers, awards, and the occasional life update — the running record.
+  Talks, papers, awards, and the occasional life update, the running record.
 slug: news
 ---
 

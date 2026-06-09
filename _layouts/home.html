@@ -2,147 +2,114 @@
 layout: default
 ---
 
-<!-- ───────────────────────── HERO ───────────────────────── -->
-<section class="hero hero--full" aria-labelledby="hero-heading">
-  <div class="hero-bg" aria-hidden="true">
-    {%- comment -%}
-      The poster is rendered as a CSS background on its own div behind
-      the <video>, NOT as the video's poster attribute. The <video>
-      stays opacity:0 until the `playing` event fires, so Safari never
-      draws a tap-to-play overlay on top of it. The poster dims match
-      the video exactly so the cross-fade is invisible.
-    {%- endcomment -%}
-    {% assign asset_v = site.time | date: '%s' %}
-    <div class="hero-bg-poster"
-         style="background-image: url('{{ '/assets/images/hero-bg.jpg' | relative_url }}?v={{ asset_v }}');"></div>
-    {%- comment -%}
-      No <source> here — JS picks the right file based on the browser:
-        • WebKit (Safari macOS/iOS, all iOS browsers) → MP4 because
-          Safari refuses to autoplay VP9 even with autoplay allowed.
-        • Everyone else (Chrome/Firefox/Edge) → WebM, smaller and
-          works around the Windows + Intel iGPU H.264 hardware-decode bug.
-    {%- endcomment -%}
-    <video class="hero-bg-video"
-           autoplay muted loop playsinline preload="auto"
-           disablepictureinpicture disableremoteplayback
-           controlslist="nodownload nofullscreen noremoteplayback noplaybackrate"
-           x-webkit-airplay="deny"
-           data-hero-video
-           data-src-webm="{{ '/assets/videos/hero-bg.webm' | relative_url }}?v={{ asset_v }}"
-           data-src-mp4="{{ '/assets/videos/hero-bg.mp4' | relative_url }}?v={{ asset_v }}"></video>
-    <div class="hero-bg-overlay"></div>
-  </div>
+<!-- ───────────────────────── PROFILE / BIO ───────────────────────── -->
+<section class="profile" aria-labelledby="profile-name">
+  <div class="container profile-grid">
 
-  <div class="container hero-content">
-    <div class="hero-center" data-reveal>
-      <h1 id="hero-heading" class="hero-title">
-        <span class="reveal-line"><span>Geon-Tae Park</span></span>
-      </h1>
-
-      <div class="hero-meta">
-        <p class="hero-role">PhD Student, Electrical and Computer Engineering</p>
-        <p class="hero-aff">University of Michigan, Ann Arbor</p>
+    <!-- Photo + social -->
+    <aside class="profile-aside" data-reveal>
+      <div class="profile-photo">
+        {% assign asset_v = site.time | date: '%s' %}
+        <img src="{{ '/assets/images/portrait-hero.jpg' | relative_url }}?v={{ asset_v }}"
+             alt="Geon-Tae Park" width="480" height="600" />
       </div>
-    </div>
-
-    <div class="hero-bottom" data-reveal>
-      <div class="hero-buttons">
-        <a href="{{ '/research/' | relative_url }}" class="btn btn--primary">
-          <span>Explore research</span>
-          <span class="btn-icon">{% include icons.html name="arrow-right" %}</span>
-        </a>
-        <a href="{{ '/cv/' | relative_url }}" class="btn btn--ghost-light">
-          <span>View CV</span>
-        </a>
-      </div>
-
-      <div class="hero-social">
+      <div class="profile-social">
         {% for s in site.data.social %}
-        <a href="{{ s.url }}" class="hero-social-link" aria-label="{{ s.name }}" target="_blank" rel="noopener">
+        <a href="{{ s.url }}" class="profile-social-link" aria-label="{{ s.name }}"
+           {% unless s.icon == 'mail' %}target="_blank" rel="noopener"{% endunless %}>
           {% include icons.html name=s.icon %}
         </a>
         {% endfor %}
       </div>
-    </div>
-  </div>
+    </aside>
 
-  <a href="#intro" class="hero-scroll" aria-label="Scroll to content">
-    <span class="hero-scroll-text">Scroll</span>
-    <span class="hero-scroll-line"></span>
-  </a>
-</section>
-
-<!-- ───────────────────────── INTRO STRIP ───────────────────────── -->
-<section id="intro" class="intro" data-reveal>
-  <div class="container intro-grid">
-    <p class="intro-eyebrow">— Currently</p>
-    <div class="intro-body">
-      <p class="intro-text">
-        PhD student in <strong>Electrical and Computer Engineering</strong>
-        at the <strong>University of Michigan, Ann Arbor</strong>.
-        Previously at the <strong>University of Tokyo</strong> and
-        <strong>Kyung Hee University</strong>, working on machine-learning-driven
-        design of antireflective coatings, microprism films for bifacial
-        photovoltaics, and pixelated thermal emitters.
+    <!-- Name, role, intro, meta -->
+    <div class="profile-main" data-reveal>
+      <h1 id="profile-name" class="profile-name">{{ site.title }}</h1>
+      <p class="profile-role">
+        <span>PhD Student, Electrical &amp; Computer Engineering</span>
+        <span class="profile-aff">University of Michigan, Ann Arbor</span>
       </p>
-      <a href="{{ '/about/' | relative_url }}" class="link-arrow-text">
-        More about me {% include icons.html name="arrow-right" %}
-      </a>
-    </div>
-  </div>
-</section>
 
-<!-- ───────────────────────── RESEARCH AREAS ───────────────────────── -->
-<section class="section section--research" id="research-preview" data-section="/research/">
-  <div class="container">
-    <header class="section-header" data-reveal>
-      <p class="section-eyebrow">— Research</p>
-      <h2 class="section-title">
-        <span class="reveal-line"><span>Three directions,</span></span>
-        <span class="reveal-line"><span>one underlying question.</span></span>
-      </h2>
-      <p class="section-lede">
-        How can we let computation invent — and explain — the photonic
-        structures that diverse applications demand?
+      <p class="profile-question">
+        <span class="pq-type"><span class="pq-type-text">Can computation invent and explain the optical structures we need?</span></span>
       </p>
-    </header>
 
-    <ol class="research-list">
-      {% for area in site.data.research_areas %}
-      <li data-reveal>
-        <a href="{{ '/research/' | relative_url }}" class="research-row">
-          <span class="research-row-num">{{ area.number }}</span>
-          <div class="research-row-content">
-            <h3 class="research-row-title">{{ area.title }}</h3>
-            <p class="research-row-short">{{ area.short }}</p>
-          </div>
-          <div class="research-row-image">
-            <img src="{{ area.images[0] | relative_url }}" alt="" loading="lazy" />
-          </div>
-          <span class="research-row-arrow" aria-hidden="true">{% include icons.html name="arrow-up-right" %}</span>
+      <div class="profile-intro">
+        <p>
+          I design photonic structures with <strong>machine learning</strong> and
+          numerical optimization, turning a target optical response into real
+          multilayer coatings, microprism films, and thermal emitters.
+        </p>
+      </div>
+
+      <div class="profile-actions">
+        <a href="{{ '/cv/' | relative_url }}" class="btn">
+          <span>View CV</span>
+          <span class="btn-icon">{% include icons.html name="arrow-right" %}</span>
         </a>
-      </li>
-      {% endfor %}
-    </ol>
+        <a href="{{ '/about/' | relative_url }}" class="link-arrow-text">
+          More about me {% include icons.html name="arrow-right" %}
+        </a>
+      </div>
 
-    <div class="section-footer" data-reveal>
-      <a href="{{ '/research/' | relative_url }}" class="btn btn--ghost">
-        <span>All research areas</span>
-        <span class="btn-icon">{% include icons.html name="arrow-right" %}</span>
-      </a>
+      <!-- 3-column meta band -->
+      <div class="profile-meta">
+        <div class="profile-meta-block">
+          <h2 class="profile-meta-title">Interests</h2>
+          <ul class="profile-meta-list">
+            {% for area in site.data.research_areas %}
+            <li>
+              <a href="{{ '/research/' | relative_url }}">{{ area.title }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div class="profile-meta-block">
+          <h2 class="profile-meta-title">Education</h2>
+          <ul class="profile-meta-list">
+            {% for ed in site.data.education %}
+            <li class="profile-edu">
+              {% if ed.logo %}<img class="profile-edu-logo" src="{{ ed.logo | relative_url }}" alt="{{ ed.school }} logo" width="30" height="30" loading="lazy" />{% endif %}
+              <span class="profile-edu-text">
+                <span class="profile-meta-org">{{ ed.school }}</span>
+                <span class="profile-meta-sub">{{ ed.degree }}</span>
+              </span>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div class="profile-meta-block">
+          <h2 class="profile-meta-title">Awards</h2>
+          <ul class="profile-meta-list profile-meta-list--stacked">
+            {% for a in site.data.awards limit: 4 %}
+            <li>
+              <span class="profile-meta-org">{{ a.title }}</span>
+              <span class="profile-meta-sub">{{ a.org }} · {{ a.year }}</span>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ───────────────────────── FEATURED PUBLICATIONS ───────────────────────── -->
-<section class="section section--pubs section--dark" id="pubs-preview" data-section="/publications/">
+<!-- ───────────────────────── SELECTED PUBLICATIONS ───────────────────────── -->
+<section class="section section--pubs" id="pubs-preview" data-section="/publications/">
   <div class="container">
-    <header class="section-header" data-reveal>
-      <p class="section-eyebrow">— Selected publications</p>
-      <h2 class="section-title">
-        <span class="reveal-line"><span>Recent work,</span></span>
-        <span class="reveal-line"><span>in the open.</span></span>
-      </h2>
+    <header class="section-header section-header--row" data-reveal>
+      <div>
+        <p class="section-eyebrow">— Selected publications</p>
+        <h2 class="section-title">
+          <span class="reveal-line"><span>Recent work, in the open</span></span>
+        </h2>
+      </div>
+      <a href="{{ '/publications/' | relative_url }}" class="link-arrow-text section-header-link">
+        All publications {% include icons.html name="arrow-right" %}
+      </a>
     </header>
 
     <ul class="pub-list">
@@ -174,49 +141,35 @@ layout: default
       </li>
       {% endfor %}
     </ul>
-
-    <div class="section-footer" data-reveal>
-      <a href="{{ '/publications/' | relative_url }}" class="btn btn--inverse">
-        <span>All publications</span>
-        <span class="btn-icon">{% include icons.html name="arrow-right" %}</span>
-      </a>
-    </div>
   </div>
 </section>
 
-<!-- ───────────────────────── NEWS / TIMELINE ───────────────────────── -->
-<section class="section section--news" data-section="/news/">
-  <div class="container news-grid">
-    <header class="section-header section-header--side" data-reveal>
-      <p class="section-eyebrow">— Latest</p>
-      <h2 class="section-title">
-        <span class="reveal-line"><span>News &amp; updates</span></span>
-      </h2>
-      <p class="section-lede">
-        Talks, papers, awards, and the occasional life update.
-      </p>
+<!-- ───────────────────────── RECENT NEWS ───────────────────────── -->
+<section class="section section--news" id="news-preview" data-section="/news/">
+  <div class="container">
+    <header class="section-header section-header--row" data-reveal>
+      <div>
+        <p class="section-eyebrow">— Latest</p>
+        <h2 class="section-title">
+          <span class="reveal-line"><span>Recent news</span></span>
+        </h2>
+      </div>
+      <a href="{{ '/news/' | relative_url }}" class="link-arrow-text section-header-link">
+        All news {% include icons.html name="arrow-right" %}
+      </a>
     </header>
 
     <ol class="news-list">
-      {% for item in site.data.news limit: 5 %}
+      {% for item in site.data.news limit: 6 %}
       <li class="news-item" data-reveal>
         <time class="news-date" datetime="{{ item.date }}">
-          {{ item.date | date: "%b %d, %Y" }}
+          {{ item.date | date: "%b %Y" }}
         </time>
         <p class="news-body">{{ item.body | markdownify | remove: '<p>' | remove: '</p>' }}</p>
         {% if item.tag %}<span class="news-tag news-tag--{{ item.tag }}">{{ item.tag }}</span>{% endif %}
       </li>
       {% endfor %}
     </ol>
-  </div>
-
-  <div class="container">
-    <div class="section-footer" data-reveal>
-      <a href="{{ '/news/' | relative_url }}" class="btn btn--ghost">
-        <span>All news</span>
-        <span class="btn-icon">{% include icons.html name="arrow-right" %}</span>
-      </a>
-    </div>
   </div>
 </section>
 

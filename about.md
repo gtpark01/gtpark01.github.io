@@ -26,7 +26,7 @@ slug: about
       <strong>University of Michigan, Ann Arbor</strong>. I earned my BS in
       Applied Physics and MS in Physics from <strong>Kyung Hee University</strong>,
       where I worked in the Nano Photonics Lab on machine-learning-driven
-      inverse design of optical coatings — collaborating with KRICT on deep-UV
+      inverse design of optical coatings, collaborating with KRICT on deep-UV
       multilayers and with Hyundai Motor Group on microprism films for
       bifacial photovoltaics.
     </p>
@@ -40,7 +40,7 @@ slug: about
     <p>
       My research sits at the intersection of physics, computation, and design:
       using factorization machines, Bayesian methods, and interpretable ML to
-      treat photonic design as a combinatorial optimization problem — and to
+      treat photonic design as a combinatorial optimization problem, and to
       surface structures that traditional graded-index intuition would never
       reach.
     </p>
@@ -117,7 +117,7 @@ slug: about
       </div>
       <div class="interest-card-body">
         <h4>Interpretable ML</h4>
-        <p>Surrogates that are fast <em>and</em> give back design rules — not just answers.</p>
+        <p>Surrogates that are fast <em>and</em> give back design rules, not just answers.</p>
       </div>
     </article>
     <article class="interest-card" data-reveal>

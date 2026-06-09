@@ -1,6 +1,6 @@
 - role: Research Assistant
   org: "Nano Photonics Lab, Kyung Hee University"
-  period: "Jan. 2023 — Present"
+  period: "Jan. 2023 – Present"
   advisor: "Prof. Sun-Kyung Kim"
   project: "Machine learning-based antireflective coating design · Microprism design for PV efficiency"
   bullets:
@@ -10,7 +10,7 @@
 
 - role: Research Assistant
   org: "Thermal Energy Engineering Lab, The University of Tokyo"
-  period: "Sept. 2025 — Nov. 2025"
+  period: "Sept. 2025 – Nov. 2025"
   advisor: "Prof. Junichiro Shiomi"
   project: "Machine learning-based thermal emitter design"
   bullets:
@@ -19,13 +19,13 @@
 
 - role: Teaching Assistant
   org: "Semiconductor and Properties Processing Lab, Kyung Hee University"
-  period: "Mar. 2025 — Jun. 2025"
+  period: "Mar. 2025 – Jun. 2025"
   bullets:
     - "Guided advanced undergraduates in semiconductor processing techniques: thermal/e-beam evaporation, ellipsometry, AFM, FTIR, RIE, and laser-interference lithography."
 
 - role: Research Assistant
   org: "Center for Quantum Information, Korea Institute of Science & Technology"
-  period: "Jul. 2022 — Sept. 2022"
+  period: "Jul. 2022 – Sept. 2022"
   advisor: "Dr. Hyang-Tag Lim"
   bullets:
     - "Formulated a Sagnac interferometer to generate high-purity entangled photon pairs via type-II spontaneous parametric down-conversion in PPKTP."

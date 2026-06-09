@@ -632,13 +632,12 @@ strong { font-weight: 600; color: var(--color-ink); }
   100% { clip-path: inset(0 100% 0 -0.06em); opacity: 0; }
 }
 @keyframes laser-caret {
-  /* The beam leads the reveal: no startup lag, and it reaches the end (37%)
-     before the text finishes revealing (40%), so the laser is always slightly
-     ahead of the written edge. */
+  /* The beam sits exactly at the writing edge: it travels in lockstep with the
+     reveal (both finish at 40%), so the word appears right as the light passes. */
   0%   { left: 0;    opacity: 0; }
   3%   { opacity: 1; }
-  37%  { left: 100%; opacity: 1; }
-  45%  { left: 100%; opacity: 0; }
+  40%  { left: 100%; opacity: 1; }
+  48%  { left: 100%; opacity: 0; }
   100% { left: 100%; opacity: 0; }
 }
 

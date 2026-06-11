@@ -25,25 +25,14 @@ slug: about
       <p>
         I'm a PhD student in Electrical and Computer Engineering at the
         <strong>University of Michigan, Ann Arbor</strong>. I earned my BS in
-        Applied Physics and MS in Physics from <strong>Kyung Hee University</strong>,
-        where I worked in the Nano Photonics Lab on machine-learning-driven
-        inverse design of optical coatings, collaborating with KRICT on deep-UV
-        multilayers and with Hyundai Motor Group on microprism films for
-        bifacial photovoltaics.
+        Applied Physics and MS in Physics at <strong>Kyung Hee University</strong>,
+        and was recently a visiting researcher at the
+        <strong>University of Tokyo</strong>.
       </p>
       <p>
-        Most recently, I was a visiting researcher in Prof. Junichiro Shiomi's
-        Thermal Energy Engineering Lab at the <strong>University of Tokyo</strong>,
-        developing a Bayesian Optimization of Combinatorial Structures –
-        Determinantal Point Process (BOCS-DPP) framework for pixelated
-        multiband thermal emitters.
-      </p>
-      <p>
-        My research sits at the intersection of physics, computation, and design:
-        using factorization machines, Bayesian methods, and interpretable ML to
-        treat photonic design as a combinatorial optimization problem, and to
-        surface structures that traditional graded-index intuition would never
-        reach.
+        My work uses machine learning and numerical optimization to treat
+        photonic design as a combinatorial optimization problem, surfacing
+        structures that traditional graded-index intuition would never reach.
       </p>
     </div>
 

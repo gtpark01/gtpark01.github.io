@@ -4,94 +4,96 @@ layout: default
 
 <!-- ───────────────────────── PROFILE / BIO ───────────────────────── -->
 <section class="profile" aria-labelledby="profile-name">
-  <div class="container profile-grid">
+  <div class="container">
+    <div class="profile-grid">
 
-    <!-- Photo + social -->
-    <aside class="profile-aside" data-reveal>
-      <div class="profile-photo">
-        {% assign asset_v = site.time | date: '%s' %}
-        <img src="{{ '/assets/images/portrait-hero.jpg' | relative_url }}?v={{ asset_v }}"
-             alt="Geon-Tae Park" width="480" height="600" />
-      </div>
-      <div class="profile-social">
-        {% for s in site.data.social %}
-        <a href="{{ s.url }}" class="profile-social-link" aria-label="{{ s.name }}"
-           {% unless s.icon == 'mail' %}target="_blank" rel="noopener"{% endunless %}>
-          {% include icons.html name=s.icon %}
-        </a>
-        {% endfor %}
-      </div>
-    </aside>
+      <!-- Photo + social -->
+      <aside class="profile-aside" data-reveal>
+        <div class="profile-photo">
+          {% assign asset_v = site.time | date: '%s' %}
+          <img src="{{ '/assets/images/portrait-hero.jpg' | relative_url }}?v={{ asset_v }}"
+               alt="Geon-Tae Park" width="480" height="600" />
+        </div>
+        <div class="profile-social">
+          {% for s in site.data.social %}
+          <a href="{{ s.url }}" class="profile-social-link" aria-label="{{ s.name }}"
+             {% unless s.icon == 'mail' %}target="_blank" rel="noopener"{% endunless %}>
+            {% include icons.html name=s.icon %}
+          </a>
+          {% endfor %}
+        </div>
+      </aside>
 
-    <!-- Name, role, intro, meta -->
-    <div class="profile-main" data-reveal>
-      <h1 id="profile-name" class="profile-name">{{ site.title }}</h1>
-      <p class="profile-role">
-        <span>PhD Student, Electrical &amp; Computer Engineering</span>
-        <span class="profile-aff">University of Michigan, Ann Arbor</span>
-      </p>
-
-      <p class="profile-question">
-        <span class="pq-type"><span class="pq-type-text">Can computation invent and explain the optical structures we need?</span></span>
-      </p>
-
-      <div class="profile-intro">
-        <p>
-          I design photonic structures with <strong>machine learning</strong> and
-          numerical optimization, turning a target optical response into real
-          multilayer coatings, microprism films, and thermal emitters.
+      <!-- Name, role, question, intro, actions -->
+      <div class="profile-main" data-reveal>
+        <h1 id="profile-name" class="profile-name">{{ site.title }}</h1>
+        <p class="profile-role">
+          <span>PhD Student, Electrical &amp; Computer Engineering</span>
+          <span class="profile-aff">University of Michigan, Ann Arbor</span>
         </p>
+
+        <p class="profile-question">
+          <span class="pq-type"><span class="pq-type-text">Can computation invent and explain the optical structures we need?</span></span>
+        </p>
+
+        <div class="profile-intro">
+          <p>
+            I design photonic structures with machine learning and numerical
+            optimization, turning a target optical response into real-world
+            devices for energy, sensing, and imaging.
+          </p>
+        </div>
+
+        <div class="profile-actions">
+          <a href="{{ '/cv/' | relative_url }}" class="btn">
+            <span>View CV</span>
+            <span class="btn-icon">{% include icons.html name="arrow-right" %}</span>
+          </a>
+          <a href="{{ '/about/' | relative_url }}" class="link-arrow-text">
+            More about me {% include icons.html name="arrow-right" %}
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3-column meta band — full width -->
+    <div class="profile-meta" data-reveal>
+      <div class="profile-meta-block">
+        <h2 class="profile-meta-title">Interests</h2>
+        <ul class="profile-meta-list">
+          {% for area in site.data.research_areas %}
+          <li>
+            <a href="{{ '/research/' | relative_url }}">{{ area.title }}</a>
+          </li>
+          {% endfor %}
+        </ul>
       </div>
 
-      <div class="profile-actions">
-        <a href="{{ '/cv/' | relative_url }}" class="btn">
-          <span>View CV</span>
-          <span class="btn-icon">{% include icons.html name="arrow-right" %}</span>
-        </a>
-        <a href="{{ '/about/' | relative_url }}" class="link-arrow-text">
-          More about me {% include icons.html name="arrow-right" %}
-        </a>
+      <div class="profile-meta-block">
+        <h2 class="profile-meta-title">Education</h2>
+        <ul class="profile-meta-list">
+          {% for ed in site.data.education %}
+          <li class="profile-edu">
+            {% if ed.logo %}<img class="profile-edu-logo" src="{{ ed.logo | relative_url }}" alt="{{ ed.school }} logo" width="34" height="34" loading="lazy" />{% endif %}
+            <span class="profile-edu-text">
+              <span class="profile-meta-org">{{ ed.school }}</span>
+              <span class="profile-meta-sub">{{ ed.degree }}</span>
+            </span>
+          </li>
+          {% endfor %}
+        </ul>
       </div>
 
-      <!-- 3-column meta band -->
-      <div class="profile-meta">
-        <div class="profile-meta-block">
-          <h2 class="profile-meta-title">Interests</h2>
-          <ul class="profile-meta-list">
-            {% for area in site.data.research_areas %}
-            <li>
-              <a href="{{ '/research/' | relative_url }}">{{ area.title }}</a>
-            </li>
-            {% endfor %}
-          </ul>
-        </div>
-
-        <div class="profile-meta-block">
-          <h2 class="profile-meta-title">Education</h2>
-          <ul class="profile-meta-list">
-            {% for ed in site.data.education %}
-            <li class="profile-edu">
-              {% if ed.logo %}<img class="profile-edu-logo" src="{{ ed.logo | relative_url }}" alt="{{ ed.school }} logo" width="30" height="30" loading="lazy" />{% endif %}
-              <span class="profile-edu-text">
-                <span class="profile-meta-org">{{ ed.school }}</span>
-                <span class="profile-meta-sub">{{ ed.degree }}</span>
-              </span>
-            </li>
-            {% endfor %}
-          </ul>
-        </div>
-
-        <div class="profile-meta-block">
-          <h2 class="profile-meta-title">Awards</h2>
-          <ul class="profile-meta-list profile-meta-list--stacked">
-            {% for a in site.data.awards limit: 4 %}
-            <li>
-              <span class="profile-meta-org">{{ a.title }}</span>
-              <span class="profile-meta-sub">{{ a.org }} · {{ a.year }}</span>
-            </li>
-            {% endfor %}
-          </ul>
-        </div>
+      <div class="profile-meta-block">
+        <h2 class="profile-meta-title">Awards</h2>
+        <ul class="profile-meta-list profile-meta-list--stacked">
+          {% for a in site.data.awards limit: 4 %}
+          <li>
+            <span class="profile-meta-org">{{ a.title }}</span>
+            <span class="profile-meta-sub">{{ a.org }} · {{ a.year }}</span>
+          </li>
+          {% endfor %}
+        </ul>
       </div>
     </div>
   </div>

@@ -58,11 +58,14 @@ slug: about
     {% for ed in site.data.education %}
     <li class="timeline-item" data-reveal>
       <div class="timeline-period">{{ ed.period }}</div>
-      <div class="timeline-body">
-        <h3 class="timeline-title">{{ ed.degree }}</h3>
-        <p class="timeline-org">{% if ed.logo %}<img class="timeline-org-logo" src="{{ ed.logo | relative_url }}" alt="{{ ed.school }} logo" width="24" height="24" loading="lazy" />{% endif %}{{ ed.school }} · <span>{{ ed.location }}</span></p>
-        {% if ed.advisor %}<p class="timeline-meta">Advisor: {{ ed.advisor }}</p>{% endif %}
-        {% if ed.note %}<p class="timeline-note">{{ ed.note | markdownify | remove: '<p>' | remove: '</p>' }}</p>{% endif %}
+      <div class="timeline-body{% if ed.logo %} timeline-body--edu{% endif %}">
+        {% if ed.logo %}<span class="timeline-edu-logo"><img src="{{ ed.logo | relative_url }}" alt="{{ ed.school }} logo" loading="lazy" /></span>{% endif %}
+        <div class="timeline-edu-text">
+          <h3 class="timeline-title">{{ ed.degree }}</h3>
+          <p class="timeline-org">{{ ed.school }} · <span>{{ ed.location }}</span></p>
+          {% if ed.advisor %}<p class="timeline-meta">Advisor: {{ ed.advisor }}</p>{% endif %}
+          {% if ed.note %}<p class="timeline-note">{{ ed.note | markdownify | remove: '<p>' | remove: '</p>' }}</p>{% endif %}
+        </div>
       </div>
     </li>
     {% endfor %}

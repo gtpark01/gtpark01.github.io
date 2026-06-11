@@ -1165,14 +1165,17 @@ strong { font-weight: 600; color: var(--color-ink); }
 }
 .timeline-org { color: var(--color-ink-soft); font-size: 0.95rem; }
 .timeline-org span { color: var(--color-muted); }
-.timeline-org-logo {
-  width: 24px; height: 24px;
-  object-fit: contain;
-  vertical-align: middle;
-  margin-right: var(--space-2);
-  position: relative;
-  top: -1px;
+/* Education entry: school logo to the left, its height spanning the
+   degree / university / advisor lines */
+.timeline-body--edu { display: flex; align-items: stretch; gap: var(--space-5); }
+.timeline-edu-logo {
+  flex: 0 0 auto;
+  width: 78px;
+  display: grid;
+  place-items: center;
 }
+.timeline-edu-logo img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.timeline-edu-text { min-width: 0; }
 .timeline-meta { color: var(--color-muted); font-size: 0.9rem; margin-top: var(--space-2); }
 .timeline-note { color: var(--color-muted); font-size: 0.95rem; margin-top: var(--space-2); line-height: 1.6; }
 .timeline-bullets { list-style: none; margin-top: var(--space-3); display: flex; flex-direction: column; gap: var(--space-2); }

@@ -26,12 +26,19 @@ slug: about
         I'm a PhD student in Electrical and Computer Engineering at the
         <strong>University of Michigan, Ann Arbor</strong>. I earned my BS in
         Applied Physics and MS in Physics at <strong>Kyung Hee University</strong>,
-        and was recently a visiting researcher at the
-        <strong>University of Tokyo</strong>.
+        where I worked in the Nano Photonics Lab on machine-learning-driven
+        inverse design of optical coatings, in collaboration with KRICT and
+        Hyundai Motor Group.
       </p>
       <p>
-        My work uses machine learning and numerical optimization to treat
-        photonic design as a combinatorial optimization problem, surfacing
+        Most recently, I was a visiting researcher at the
+        <strong>University of Tokyo</strong>, developing Bayesian optimization
+        methods for pixelated multiband thermal emitters.
+      </p>
+      <p>
+        My research sits at the intersection of physics, computation, and design,
+        using factorization machines, Bayesian methods, and interpretable ML to
+        treat photonic design as a combinatorial optimization problem, surfacing
         structures that traditional graded-index intuition would never reach.
       </p>
     </div>

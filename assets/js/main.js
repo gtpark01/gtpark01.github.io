@@ -157,6 +157,26 @@
     });
   }
 
+  /* ───────────── News page tag filter ───────────── */
+  const newsFilterBtns = document.querySelectorAll('.news-filter-btn');
+  const newsItems = document.querySelectorAll('[data-news-list] .news-item');
+  const newsCountEl = document.querySelector('[data-news-count]');
+  if (newsFilterBtns.length && newsItems.length) {
+    newsFilterBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+        newsFilterBtns.forEach((b) => b.classList.toggle('is-active', b === btn));
+        let visible = 0;
+        newsItems.forEach((item) => {
+          const show = filter === 'all' || item.dataset.tag === filter;
+          item.classList.toggle('is-hidden', !show);
+          if (show) visible += 1;
+        });
+        if (newsCountEl) newsCountEl.textContent = visible;
+      });
+    });
+  }
+
   /* ───────────── Active-section nav indicator (homepage only) ───────────── */
   // Watch sections on the home page that map to nav links via data-section,
   // and toggle .is-active on the matching nav link as you scroll.

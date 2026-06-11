@@ -542,6 +542,7 @@ strong { font-weight: 600; color: var(--color-ink); }
   flex-wrap: wrap;
   margin-top: auto;            /* push to the bottom so it lines up with the social icons */
   padding-top: var(--space-5);
+  min-height: 44px;            /* match the social-icon row height so the centers align */
 }
 
 /* 3-column meta band — Interests / Education / Awards */

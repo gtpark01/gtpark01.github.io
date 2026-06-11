@@ -470,7 +470,7 @@ strong { font-weight: 600; color: var(--color-ink); }
   display: grid;
   grid-template-columns: minmax(0, 228px) minmax(0, 1fr);
   gap: clamp(var(--space-6), 5vw, var(--space-8));
-  align-items: start;
+  align-items: stretch;
 }
 
 /* Left column — photo + social */
@@ -540,7 +540,8 @@ strong { font-weight: 600; color: var(--color-ink); }
 .profile-actions {
   display: flex; align-items: center; gap: var(--space-5);
   flex-wrap: wrap;
-  margin-top: var(--space-3);
+  margin-top: auto;            /* push to the bottom so it lines up with the social icons */
+  padding-top: var(--space-5);
 }
 
 /* 3-column meta band — Interests / Education / Awards */
@@ -1113,10 +1114,24 @@ strong { font-weight: 600; color: var(--color-ink); }
 .about-bio.prose h2 {
   font-family: var(--font-serif);
   font-size: 2rem;
-  margin-bottom: var(--space-4);
+  margin: 0 0 var(--space-4);   /* top-align the Bio with the photo */
   font-weight: 500;
 }
 .about-bio.prose p { margin-bottom: var(--space-4); color: var(--color-ink-soft); }
+.about-bio.prose p:last-child { margin-bottom: 0; }
+
+/* Bio column: Bio text at the top, Download CV pinned to the bottom so it
+   lines up with the foot of the portrait (within the photo's height). */
+.about-bio-area { display: flex; flex-direction: column; min-width: 0; }
+.about-cv {
+  margin-top: auto;
+  padding-top: var(--space-6);
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  flex-wrap: wrap;
+}
+.about-cv .cv-updated { margin: 0; }
 
 .about-section { margin-bottom: var(--space-10); }
 .about-section-header { margin-bottom: var(--space-7); display: flex; flex-direction: column; gap: var(--space-3); }

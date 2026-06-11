@@ -19,31 +19,41 @@ slug: about
     </div>
   </div>
 
-  <div class="about-bio prose" data-reveal>
-    <h2>Bio</h2>
-    <p>
-      I'm a PhD student in Electrical and Computer Engineering at the
-      <strong>University of Michigan, Ann Arbor</strong>. I earned my BS in
-      Applied Physics and MS in Physics from <strong>Kyung Hee University</strong>,
-      where I worked in the Nano Photonics Lab on machine-learning-driven
-      inverse design of optical coatings, collaborating with KRICT on deep-UV
-      multilayers and with Hyundai Motor Group on microprism films for
-      bifacial photovoltaics.
-    </p>
-    <p>
-      Most recently, I was a visiting researcher in Prof. Junichiro Shiomi's
-      Thermal Energy Engineering Lab at the <strong>University of Tokyo</strong>,
-      developing a Bayesian Optimization of Combinatorial Structures –
-      Determinantal Point Process (BOCS-DPP) framework for pixelated
-      multiband thermal emitters.
-    </p>
-    <p>
-      My research sits at the intersection of physics, computation, and design:
-      using factorization machines, Bayesian methods, and interpretable ML to
-      treat photonic design as a combinatorial optimization problem, and to
-      surface structures that traditional graded-index intuition would never
-      reach.
-    </p>
+  <div class="about-bio-area" data-reveal>
+    <div class="about-bio prose">
+      <h2>Bio</h2>
+      <p>
+        I'm a PhD student in Electrical and Computer Engineering at the
+        <strong>University of Michigan, Ann Arbor</strong>. I earned my BS in
+        Applied Physics and MS in Physics from <strong>Kyung Hee University</strong>,
+        where I worked in the Nano Photonics Lab on machine-learning-driven
+        inverse design of optical coatings, collaborating with KRICT on deep-UV
+        multilayers and with Hyundai Motor Group on microprism films for
+        bifacial photovoltaics.
+      </p>
+      <p>
+        Most recently, I was a visiting researcher in Prof. Junichiro Shiomi's
+        Thermal Energy Engineering Lab at the <strong>University of Tokyo</strong>,
+        developing a Bayesian Optimization of Combinatorial Structures –
+        Determinantal Point Process (BOCS-DPP) framework for pixelated
+        multiband thermal emitters.
+      </p>
+      <p>
+        My research sits at the intersection of physics, computation, and design:
+        using factorization machines, Bayesian methods, and interpretable ML to
+        treat photonic design as a combinatorial optimization problem, and to
+        surface structures that traditional graded-index intuition would never
+        reach.
+      </p>
+    </div>
+
+    <div class="about-cv">
+      <a href="{{ '/assets/cv/gtpark-cv.pdf' | relative_url }}" class="btn" target="_blank" rel="noopener">
+        <span>Download CV (PDF)</span>
+        <span class="btn-icon">{% include icons.html name="arrow-down" %}</span>
+      </a>
+      <p class="cv-updated">Last updated: <time datetime="2026-05">May 2026</time></p>
+    </div>
   </div>
 </div>
 
